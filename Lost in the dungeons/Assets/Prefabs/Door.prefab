@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1105137072091276193}
   - component: {fileID: 2379938629628518951}
   - component: {fileID: -6464123740140827161}
+  - component: {fileID: 4341287456082578037}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -137,3 +138,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4341287456082578037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6576669005742702394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e43d666216c72943b4266eca027dbb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walls
+  Wall: {fileID: 3844413787609587866, guid: 8c81b1db40819664eae7df1f3b767bde, type: 3}
+  LWall: {fileID: 9046473126912092223, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
+  RWall: {fileID: 1583862452381235309, guid: caa20408c4000b44eb0ce9244d6c157a, type: 3}
