@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Tilemap/Tilemap.unity
+    path: Assets/Scenes/Tilemap.unity
     guid: 143e57504a717054e8474b2ea3f03b6d
+  - enabled: 1
+    path: Assets/Scenes/Lost in the dungeons.unity
+    guid: af43f79ddb206324283557ca5e141dd1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
