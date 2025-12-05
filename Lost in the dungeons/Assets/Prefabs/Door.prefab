@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6576669005742702394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e43d666216c72943b4266eca027dbb0, type: 3}
+  m_Script: {fileID: 11500000, guid: ec069e403e247034eb54bb2715ff863a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Walls
   Wall: {fileID: 3844413787609587866, guid: 8c81b1db40819664eae7df1f3b767bde, type: 3}
