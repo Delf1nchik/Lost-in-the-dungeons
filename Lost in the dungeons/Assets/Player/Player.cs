@@ -10,10 +10,26 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void Start()
+    {
+        GameInput.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+    }
+
+    private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
+    {
+        ActiveGun.Instance.GetActiveGun().Shoot();
+    }
+
     private void FixedUpdate()
     {
         Vector2 inputVector = GameInput.instance.GetMovementVector();
         inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(GameInput.instance.GetMousePosition());
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;
     }
 }
