@@ -1,3 +1,4 @@
+using System.Transactions;
 using UnityEngine;
 
 public class Player2 : MonoBehaviour
@@ -15,11 +16,17 @@ public class Player2 : MonoBehaviour
     private void Start()
     {
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+        GameInput2.instance.OnWeaponChange += GameInput_OnWeaponChange;
     }
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
-        ActiveGun.Instance.GetActiveGun().Shoot();
+        ActiveWeapon.Instance.GetActiveWeapon().Attack();
+    }
+
+    private void GameInput_OnWeaponChange(object sender, System.EventArgs e)
+    {
+        ActiveWeapon.CurrentWeaponIndex = (ActiveWeapon.CurrentWeaponIndex + 1) % 2;
     }
 
     private void FixedUpdate()

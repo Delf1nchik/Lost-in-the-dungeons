@@ -9,6 +9,7 @@ public class GameInput2 : MonoBehaviour
     private PlayerActions _actions;
 
     public event EventHandler OnPlayerAttack;
+    public event EventHandler OnWeaponChange;
 
     private void Awake()
     {
@@ -18,6 +19,15 @@ public class GameInput2 : MonoBehaviour
         _actions.Enable();
 
         _actions.Combat.Attack.started += Attack_started;
+        _actions.Combat.ChangeWeapon.started += ChangeWeapon_started;
+    }
+
+    private void ChangeWeapon_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (OnWeaponChange != null)
+        {
+            OnWeaponChange.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void Attack_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
