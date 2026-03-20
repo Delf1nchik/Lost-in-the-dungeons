@@ -28,3 +28,4 @@
 --------------------------------------------
 **Использованные ассеты**
 - Стены, дверь, пол, декорации - https://mwaayk.itch.io/pixel-dungeon-tileset
+-Декорации,враги - https://pixel-poem.itch.io/dungeon-assetpuck
