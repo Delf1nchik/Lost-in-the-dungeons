@@ -10,6 +10,6 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) SceneManager.LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.F)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
