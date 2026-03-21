@@ -35,12 +35,16 @@ public class AddRoom : MonoBehaviour
             foreach (Transform spawner in enemySpawners)
             {
                 int rand = Random.Range(0, 11);
-                if (rand < 9) 
+                if (rand < 9)
                 {
                     GameObject enemyType = enemyTypes[Random.Range(0, enemyTypes.Length)];
                     GameObject enemy = Instantiate(enemyType, spawner.position, Quaternion.identity);
                     enemy.transform.parent = transform;
                     enemies.Add(enemy);
+                }
+                else if (rand >9)
+                {
+                    Instantiate(healthPotion, spawner.position, Quaternion.identity);
                 }
             }
 
