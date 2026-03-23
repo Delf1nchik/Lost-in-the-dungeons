@@ -5435,6 +5435,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7288332973335469823, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.92362237
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288332973335469823, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.038188815
+      objectReference: {fileID: 0}
     - target: {fileID: 9046473126912092223, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
       propertyPath: m_Name
       value: Lwall (3)
@@ -17969,6 +17977,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3950342788710985905}
     m_Modifications:
+    - target: {fileID: -3045968548103135371, guid: 6a76b39274c99f4429c54c7a7272f67d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9072557
+      objectReference: {fileID: 0}
+    - target: {fileID: -3045968548103135371, guid: 6a76b39274c99f4429c54c7a7272f67d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.046372145
+      objectReference: {fileID: 0}
     - target: {fileID: 5923909309616417067, guid: 6a76b39274c99f4429c54c7a7272f67d, type: 3}
       propertyPath: m_Name
       value: Lwall1 (1)
@@ -19090,8 +19106,16 @@ PrefabInstance:
       value: 1.0623646
       objectReference: {fileID: 0}
     - target: {fileID: -6514810084336317604, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
+      propertyPath: m_Size.y
+      value: 0.89088905
+      objectReference: {fileID: 0}
+    - target: {fileID: -6514810084336317604, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
       propertyPath: m_Offset.x
       value: -0.03118229
+      objectReference: {fileID: 0}
+    - target: {fileID: -6514810084336317604, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.000000044703484
       objectReference: {fileID: 0}
     - target: {fileID: 2968810568001487010, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
       propertyPath: m_LocalPosition.x

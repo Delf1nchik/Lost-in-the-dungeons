@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2968810568001487010}
   - component: {fileID: 4099985830727687377}
   - component: {fileID: -6514810084336317604}
-  - component: {fileID: -6817787269435541020}
   - component: {fileID: 5554962569164530039}
+  - component: {fileID: -7771309091256726863}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Door
@@ -140,21 +140,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-6817787269435541020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824828625327427232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec069e403e247034eb54bb2715ff863a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Walls
-  Wall: {fileID: 3844413787609587866, guid: 8c81b1db40819664eae7df1f3b767bde, type: 3}
-  LWall: {fileID: 9046473126912092223, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
-  RWall: {fileID: 1583862452381235309, guid: caa20408c4000b44eb0ce9244d6c157a, type: 3}
 --- !u!50 &5554962569164530039
 Rigidbody2D:
   serializedVersion: 5
@@ -182,3 +167,17 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7771309091256726863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824828625327427232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4116090f6767b4386fe2da5d33ee86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  LWall: {fileID: 9046473126912092223, guid: ff53e9f70fc64f043a3a78763e82b8bf, type: 3}
+  RWall: {fileID: 1583862452381235309, guid: caa20408c4000b44eb0ce9244d6c157a, type: 3}
