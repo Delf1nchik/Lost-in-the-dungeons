@@ -346,11 +346,11 @@ GameObject:
   - component: {fileID: 122621010}
   - component: {fileID: 122621009}
   - component: {fileID: 122621012}
-  - component: {fileID: 122621014}
   - component: {fileID: 122621013}
+  - component: {fileID: 122621014}
   m_Layer: 7
-  m_Name: Enemy
-  m_TagString: Skeleton
+  m_Name: enemies-skeleton1_idle_0
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,8 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Skeleton
   scaleX: 1.3
   scaleY: 1.3
-  EnemyHP: 100
-  animator: {fileID: 122621009}
 --- !u!50 &122621013
 Rigidbody2D:
   serializedVersion: 5
@@ -1092,7 +1090,7 @@ Transform:
   m_GameObject: {fileID: 635375145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.3, y: 0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1174,7 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5aad4c0250ee4429abd7f8dada95a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player2
-  movingSpeed: 6
+  movingSpeed: 10
   animator: {fileID: 635375152}
 --- !u!95 &635375152
 Animator:
