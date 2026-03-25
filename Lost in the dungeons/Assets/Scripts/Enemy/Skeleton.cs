@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skeleton : MonoBehaviour
 {
@@ -7,9 +8,11 @@ public class Skeleton : MonoBehaviour
     [SerializeField] private float scaleY = 1.3f;
     public int EnemyHP = 100;
     public Animator animator;
+    public Slider enemyHealthBar;
 
     void Start()
     {
+        enemyHealthBar.value = EnemyHP;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -41,6 +44,7 @@ public class Skeleton : MonoBehaviour
     public void TakeDamage(int damage)
     {
         EnemyHP -= damage;
+        enemyHealthBar.value = EnemyHP;
         if (EnemyHP > 0)
         {
             animator.SetTrigger("Damage");
@@ -52,5 +56,9 @@ public class Skeleton : MonoBehaviour
             this.enabled = false;
 
         }
+    }
+    public void PlayerDamage()
+    {
+
     }
 }
