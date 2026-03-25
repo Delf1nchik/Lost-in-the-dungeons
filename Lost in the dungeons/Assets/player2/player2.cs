@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Transactions;
+using Unity.VisualScripting;
 
 public class Player2 : MonoBehaviour
 {
@@ -22,6 +24,9 @@ public class Player2 : MonoBehaviour
             enabled = false;
             return;
         }
+        //GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+        //GameInput2.instance.OnWeaponChange += GameInput_OnWeaponChange;
+        // ActiveWeapon.Instance.transform.GetChild(1).gameObject.SetActive(false);
 
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
         isInitialized = true;
@@ -51,6 +56,11 @@ public class Player2 : MonoBehaviour
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
         inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(GameInput2.instance.GetMousePosition());
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;
     }
 
     private void OnDestroy()
