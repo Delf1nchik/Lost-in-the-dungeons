@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public float damage = 10f;
-    public float lifetime = 0.5f;
+    public float lifetime = 1f;
 
     private Rigidbody2D rb;
 
