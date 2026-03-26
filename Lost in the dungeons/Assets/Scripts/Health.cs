@@ -1,23 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    Image healthBar;
+    public Image healthBar; // вручную задаём
     public float Maxhealth = 100f;
     public float HP;
 
     void Start()
     {
-        healthBar = GetComponent<Image>();
         HP = Maxhealth;
+        UpdateBar();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        healthBar.fillAmount = HP / Maxhealth;
+        HP -= damage;
+
+        if (HP < 0) HP = 0;
+
+        UpdateBar();
+    }
+
+    void UpdateBar()
+    {
+        if (healthBar != null)
+            healthBar.fillAmount = HP / Maxhealth;
     }
 }

@@ -10,6 +10,8 @@ public class Skeleton : MonoBehaviour
     public Animator animator;
     public Slider enemyHealthBar;
 
+    public float damage = 10f;
+
     void Start()
     {
         enemyHealthBar.value = EnemyHP;
@@ -18,7 +20,7 @@ public class Skeleton : MonoBehaviour
         {
             target = player.transform;
         }
-        Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+       // Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     void Update()
@@ -27,6 +29,13 @@ public class Skeleton : MonoBehaviour
 
         // Поворот спрайта
         HandleFlip();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerDamage();
+        }
     }
 
     private void HandleFlip()
@@ -59,6 +68,15 @@ public class Skeleton : MonoBehaviour
     }
     public void PlayerDamage()
     {
+        Debug.Log("DAMAGE DEALT");
 
+        if (target == null) return;
+
+        Health playerHealth = target.GetComponent<Health>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
     }
 }
