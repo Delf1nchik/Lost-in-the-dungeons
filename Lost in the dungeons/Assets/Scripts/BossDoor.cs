@@ -1,21 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossDoor : MonoBehaviour
 {
-    public Transform bossRoomSpawnPoint;
+    public string bossSceneName = "BossRoom";
 
     private bool playerInside = false;
-    private GameObject player;
+    private GameObject player; 
 
     private void Update()
     {
-        if (playerInside && Input.GetKeyDown(KeyCode.E))
+        if (playerInside && Input.GetKeyDown(KeyCode.F))
         {
             PlayerInventory inv = player.GetComponent<PlayerInventory>();
 
             if (inv.hasKey)
             {
-                TeleportPlayer();
+                SceneManager.LoadScene(bossSceneName);
             }
             else
             {
@@ -24,17 +25,12 @@ public class BossDoor : MonoBehaviour
         }
     }
 
-    void TeleportPlayer()
-    {
-        player.transform.position = bossRoomSpawnPoint.position;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-            player = other.gameObject;
+            player = other.gameObject; 
         }
     }
 
@@ -43,6 +39,7 @@ public class BossDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = false;
+            player = null;
         }
     }
 }
