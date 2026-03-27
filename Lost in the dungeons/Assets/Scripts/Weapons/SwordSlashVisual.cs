@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class SwordVisual : MonoBehaviour
+public class SwordSlashVisual : MonoBehaviour
 {
     [SerializeField] private Sword sword;
 
-    private Animator animator;
     private const string ATTACK = "Attack";
+    private Animator animator;
 
     private void Awake()
     {
@@ -21,11 +21,4 @@ public class SwordVisual : MonoBehaviour
     {
         animator.SetTrigger(ATTACK);
     }
-
-    public void TriggerEndAttackAnimation()
-    {
-        sword.AttackColliderTurnOff();
-    }
-
 }
-
