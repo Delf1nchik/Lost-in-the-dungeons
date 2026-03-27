@@ -1,35 +1,40 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
+    public static Player2 instance { get; private set; }
+
     [SerializeField] private float movingSpeed = 10f;
 
     private Rigidbody2D rb;
     public Animator animator;
     private Vector2 direction;
+    private bool isInitialized = false;
 
     private void Awake()
     {
+        instance = this;
+
         rb = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject); // Персонаж тоже сохраняется
+        DontDestroyOnLoad(gameObject); // РџРµСЂСЃРѕРЅР°Р¶ С‚РѕР¶Рµ СЃРѕС…СЂР°РЅСЏРµС‚СЃСЏ
     }
 
     private void Start()
     {
-        // Подписка на событие атаки с проверкой, чтобы не было ошибки, если GameInput2 ещё не создан
-        if (GameInput2.instance != null)
+        if (GameInput2.instance == null)
         {
-            GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+            Debug.LogError("GameInput2 Г­ГҐ Г­Г Г©Г¤ГҐГ­!");
+            enabled = false;
+            return;
         }
-        else
-        {
-            Debug.LogWarning("GameInput2.instance is null at Start, attack won't work until it's created.");
-        }
+
+        GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+        isInitialized = true;
     }
 
     private void Update()
     {
-        // Обработка анимаций (оставляем как было)
+        // РћР±СЂР°Р±РѕС‚РєР° Р°РЅРёРјР°С†РёР№ (РѕСЃС‚Р°РІР»СЏРµРј РєР°Рє Р±С‹Р»Рѕ)
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", direction.x);
@@ -39,29 +44,37 @@ public class Player2 : MonoBehaviour
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
-        // Проверка на null для ActiveGun, если нужно
-        if (ActiveGun.Instance != null && ActiveGun.Instance.GetActiveGun() != null)
+        if (ActiveGun.Instance != null)
         {
-            ActiveGun.Instance.GetActiveGun().Shoot();
+            ActiveGun.Instance.GetActiveGun()?.Attack();
         }
-        else
-        {
-            Debug.LogWarning("ActiveGun is not ready for shooting.");
-        }
+    }
+
+    public Vector3 GetPlayerScreenPos()
+    {
+        Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        return playerScreenPos;
     }
 
     private void FixedUpdate()
     {
-        // Защита от null: если GameInput2.instance отсутствует, не пытаемся двигаться
-        if (GameInput2.instance == null)
+        // Р—Р°С‰РёС‚Р° РѕС‚ null: РµСЃР»Рё GameInput2.instance РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚, РЅРµ РїС‹С‚Р°РµРјСЃСЏ РґРІРёРіР°С‚СЊСЃСЏ
+        if (!isInitialized || GameInput2.instance == null)
         {
             Debug.LogError("GameInput2.instance is null in FixedUpdate! Movement disabled.");
             return;
         }
 
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
-        // Если inputVector нулевой, движение не будет применено, но ошибки не будет
+        // Р•СЃР»Рё inputVector РЅСѓР»РµРІРѕР№, РґРІРёР¶РµРЅРёРµ РЅРµ Р±СѓРґРµС‚ РїСЂРёРјРµРЅРµРЅРѕ, РЅРѕ РѕС€РёР±РєРё РЅРµ Р±СѓРґРµС‚
         inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
+    }
+    private void OnDestroy()
+    {
+        if (GameInput2.instance != null)
+        {
+            GameInput2.instance.OnPlayerAttack -= GameInput_OnPlayerAttack;
+        }
     }
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using System;
 
 public class GameInput2 : MonoBehaviour
@@ -11,21 +11,23 @@ public class GameInput2 : MonoBehaviour
 
     private void Awake()
     {
-        // Реализация синглтона с сохранением между сценами
+        // Р РµР°Р»РёР·Р°С†РёСЏ СЃРёРЅРіР»С‚РѕРЅР° СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј РјРµР¶РґСѓ СЃС†РµРЅР°РјРё
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject); // Теперь объект не уничтожается при загрузке новой сцены
+        DontDestroyOnLoad(gameObject); // РўРµРїРµСЂСЊ РѕР±СЉРµРєС‚ РЅРµ СѓРЅРёС‡С‚РѕР¶Р°РµС‚СЃСЏ РїСЂРё Р·Р°РіСЂСѓР·РєРµ РЅРѕРІРѕР№ СЃС†РµРЅС‹
 
         _actions = new PlayerActions();
-        _actions.Enable();
+
+        _actions.PLayer.Enable();
+        _actions.Combat.Enable();
 
         _actions.Combat.Attack.started += Attack_started;
 
-        Debug.Log("GameInput2 initialized"); // Для проверки, что объект создан
+        Debug.Log("GameInput2 initialized"); // Р”Р»СЏ РїСЂРѕРІРµСЂРєРё, С‡С‚Рѕ РѕР±СЉРµРєС‚ СЃРѕР·РґР°РЅ
     }
 
     private void Attack_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -35,7 +37,7 @@ public class GameInput2 : MonoBehaviour
 
     public Vector2 GetMovementVector()
     {
-        // Читаем вектор движения из Input Actions
+        // Р§РёС‚Р°РµРј РІРµРєС‚РѕСЂ РґРІРёР¶РµРЅРёСЏ РёР· Input Actions
         Vector2 inputVector = _actions.PLayer.Move.ReadValue<Vector2>();
         return inputVector;
     }
@@ -44,5 +46,33 @@ public class GameInput2 : MonoBehaviour
     {
         Vector2 mousePosition = _actions.PLayer.MousePosition.ReadValue<Vector2>();
         return mousePosition;
+    }
+
+    private void OnDisable()
+    {
+        if (_actions != null)
+        {
+            if (_actions.PLayer.enabled) _actions.PLayer.Disable();
+            if (_actions.Combat.enabled) _actions.Combat.Disable();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_actions != null)
+        {
+            _actions.Combat.Attack.started -= Attack_started;
+
+            if (_actions.PLayer.enabled) _actions.PLayer.Disable();
+            if (_actions.Combat.enabled) _actions.Combat.Disable();
+
+            _actions.Dispose();
+            _actions = null;
+        }
+
+        if (instance == this)
+        {
+            instance = null;
+        }
     }
 }
