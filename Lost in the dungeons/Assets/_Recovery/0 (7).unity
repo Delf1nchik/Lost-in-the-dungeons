@@ -3364,8 +3364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8724595c492fa418f771b31d3b8e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Skeleton
-  scaleX: 1.5
-  scaleY: 1.5
+  scaleX: 1.3
+  scaleY: 1.3
   EnemyHP: 100
   animator: {fileID: 1600489882}
   enemyHealthBar: {fileID: 189294959}
