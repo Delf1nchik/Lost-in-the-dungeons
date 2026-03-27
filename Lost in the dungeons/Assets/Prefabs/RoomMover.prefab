@@ -91,5 +91,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41c6f1feb7c35d47894ce959fdbb36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cameraChangePos: {x: -13, y: 0, z: 0}
+  cameraChangePos: {x: -21, y: 0, z: 0}
   playerChangePos: {x: -2, y: 0, z: 0}

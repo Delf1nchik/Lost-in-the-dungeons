@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: f7257f821e9c6eb4fb6bbeadcf0ed823
+  - enabled: 1
     path: Assets/Scenes/Tilemap.unity
     guid: 143e57504a717054e8474b2ea3f03b6d
   - enabled: 1
     path: Assets/Scenes/Lost in the dungeons.unity
     guid: af43f79ddb206324283557ca5e141dd1
+  - enabled: 1
+    path: Assets/Scenes/BossRoom.unity
+    guid: 3c740bea18dcdfb43aa7480679cdadb5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
