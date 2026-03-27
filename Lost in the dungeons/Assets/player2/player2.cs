@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
+    public static Player2 instance { get; private set; }
+
     [SerializeField] private float movingSpeed = 10f;
 
     private Rigidbody2D rb;
@@ -10,7 +12,8 @@ public class Player2 : MonoBehaviour
     private bool isInitialized = false;
 
     private void Awake()
-    {
+    { 
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -40,7 +43,7 @@ public class Player2 : MonoBehaviour
     {
         if (ActiveGun.Instance != null)
         {
-            ActiveGun.Instance.GetActiveGun()?.Shoot();
+            ActiveGun.Instance.GetActiveGun()?.Attack();
         }
     }
 
@@ -51,6 +54,12 @@ public class Player2 : MonoBehaviour
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
         inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
+    }
+
+    public Vector3 GetPlayerScreenPos()
+    {
+        Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        return playerScreenPos;
     }
 
     private void OnDestroy()

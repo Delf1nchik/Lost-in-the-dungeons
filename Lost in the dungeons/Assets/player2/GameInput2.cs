@@ -4,9 +4,7 @@ using System;
 public class GameInput2 : MonoBehaviour
 {
     public static GameInput2 instance { get; private set; }
-
     private PlayerActions _actions;
-
     public event EventHandler OnPlayerAttack;
 
     private void Awake()
@@ -28,12 +26,12 @@ public class GameInput2 : MonoBehaviour
         _actions.Combat.Enable();
 
         // Подписываемся на событие атаки
-        _actions.Combat.Attack.started += Attack_started;
+        _actions.Combat.Attack.started += PlayerAttack_started;
 
         Debug.Log($"GameInput2 создан на сцене: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name}");
     }
 
-    private void Attack_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void PlayerAttack_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnPlayerAttack?.Invoke(this, EventArgs.Empty);
     }
@@ -68,7 +66,7 @@ public class GameInput2 : MonoBehaviour
         if (_actions != null)
         {
             // Отписываемся от событий
-            _actions.Combat.Attack.started -= Attack_started;
+            _actions.Combat.Attack.started -= PlayerAttack_started;
 
             // Отключаем action maps
             if (_actions.PLayer.enabled) _actions.PLayer.Disable();
