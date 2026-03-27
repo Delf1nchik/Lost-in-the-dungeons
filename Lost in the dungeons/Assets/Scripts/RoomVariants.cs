@@ -9,6 +9,7 @@ public class RoomVariants : MonoBehaviour
     public GameObject[] rightRooms;
     public GameObject[] leftRooms;
 
+
     public GameObject key;
     public GameObject gun;
     [HideInInspector] public List<GameObject> rooms;
