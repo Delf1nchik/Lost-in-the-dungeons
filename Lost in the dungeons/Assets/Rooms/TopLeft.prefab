@@ -174,7 +174,6 @@ Transform:
   - {fileID: 2861920033398499652}
   - {fileID: 5020341290580063346}
   - {fileID: 6747449246677153688}
-  - {fileID: 2989203802400382120}
   - {fileID: 1161978489057835737}
   - {fileID: 4486033836496368034}
   - {fileID: 3022574989060250616}
@@ -245,20 +244,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AddRoom
   walls:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8504015763801759301}
+  - {fileID: 7845266511135953578}
   wallEffect: {fileID: 0}
   door: {fileID: 0}
   enemyTypes:
   - {fileID: 4798772416298049102, guid: 2177f90ddc950e8478f8ad34c5ef8c18, type: 3}
   - {fileID: 7371230274221331642, guid: b121efb30e8142f48b1b2d86e8120480, type: 3}
   enemySpawners:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7144514095675197687}
+  - {fileID: 4457519214082753782}
+  - {fileID: 4024082360565572087}
+  - {fileID: 3331672690889886129}
   shield: {fileID: 0}
   healthPotion: {fileID: 4439342708565776601, guid: 5462437eed0f9cc489ff735723b55812, type: 3}
   enemies: []
@@ -568,6 +565,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2456551511295591134}
+  - {fileID: 2989203802400382120}
   m_Father: {fileID: 6299009430637035908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &20438264317336586
@@ -576,7 +574,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6299009430637035908}
+    m_TransformParent: {fileID: 3776329459679142547}
     m_Modifications:
     - target: {fileID: -6514810084336317604, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
       propertyPath: m_Size.x
@@ -646,6 +644,11 @@ PrefabInstance:
 --- !u!4 &2989203802400382120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2968810568001487010, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
+  m_PrefabInstance: {fileID: 20438264317336586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7845266511135953578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7824828625327427232, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
   m_PrefabInstance: {fileID: 20438264317336586}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &77546030928521069
@@ -6892,6 +6895,11 @@ PrefabInstance:
 --- !u!4 &2456551511295591134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1105137072091276193, guid: 117ea7d5c2f575747a1b743e1d7b1d33, type: 3}
+  m_PrefabInstance: {fileID: 3260976503921615231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8504015763801759301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6576669005742702394, guid: 117ea7d5c2f575747a1b743e1d7b1d33, type: 3}
   m_PrefabInstance: {fileID: 3260976503921615231}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3266902272408240222

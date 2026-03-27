@@ -104,20 +104,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AddRoom
   walls:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4416591381153578538}
+  - {fileID: 5285112531843895612}
   wallEffect: {fileID: 0}
   door: {fileID: 0}
   enemyTypes:
   - {fileID: 4798772416298049102, guid: 2177f90ddc950e8478f8ad34c5ef8c18, type: 3}
   - {fileID: 7371230274221331642, guid: b121efb30e8142f48b1b2d86e8120480, type: 3}
   enemySpawners:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1737775016885848030}
+  - {fileID: 8804884985512201111}
+  - {fileID: 5611419870461921195}
+  - {fileID: 1704274182675596699}
   shield: {fileID: 0}
   healthPotion: {fileID: 4439342708565776601, guid: 5462437eed0f9cc489ff735723b55812, type: 3}
   enemies: []
@@ -5676,6 +5674,11 @@ PrefabInstance:
 --- !u!4 &935702600216600382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2968810568001487010, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
+  m_PrefabInstance: {fileID: 2724429240949170076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5285112531843895612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7824828625327427232, guid: e0143e224f23c9f4086ef6ebed9340ba, type: 3}
   m_PrefabInstance: {fileID: 2724429240949170076}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2730064877041753557
@@ -15753,6 +15756,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 117ea7d5c2f575747a1b743e1d7b1d33, type: 3}
+--- !u!1 &4416591381153578538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6576669005742702394, guid: 117ea7d5c2f575747a1b743e1d7b1d33, type: 3}
+  m_PrefabInstance: {fileID: 7354351716028416272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7591340145961673393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1105137072091276193, guid: 117ea7d5c2f575747a1b743e1d7b1d33, type: 3}
