@@ -1,5 +1,4 @@
 using System.Transactions;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player2 : MonoBehaviour
@@ -18,7 +17,6 @@ public class Player2 : MonoBehaviour
     {
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
         GameInput2.instance.OnWeaponChange += GameInput_OnWeaponChange;
-        ActiveWeapon.Instance.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
@@ -29,11 +27,6 @@ public class Player2 : MonoBehaviour
     private void GameInput_OnWeaponChange(object sender, System.EventArgs e)
     {
         ActiveWeapon.CurrentWeaponIndex = (ActiveWeapon.CurrentWeaponIndex + 1) % 2;
-        foreach (Transform child in ActiveWeapon.Instance.transform)
-        {
-            child.transform.gameObject.SetActive(false);
-        }
-        ActiveWeapon.Instance.transform.GetChild(ActiveWeapon.CurrentWeaponIndex).gameObject.SetActive(true);
     }
 
     private void FixedUpdate()

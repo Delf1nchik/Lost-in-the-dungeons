@@ -13,6 +13,11 @@ public class ActiveWeapon : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+
+    }
+
     public abstract class Weapon : MonoBehaviour
     {
         public abstract void Attack();
