@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5081193416225874292}
-  - component: {fileID: 6165492691385370634}
+  - component: {fileID: -3194845992038621321}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Room
@@ -461,7 +461,7 @@ Transform:
   - {fileID: 3774311757517546466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6165492691385370634
+--- !u!61 &-3194845992038621321
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,7 +495,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0000009536743, y: 0.017545462}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -505,7 +505,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 21.282255, y: 13.176371}
   m_EdgeRadius: 0
 --- !u!1 &6097238237398201599
 GameObject:
