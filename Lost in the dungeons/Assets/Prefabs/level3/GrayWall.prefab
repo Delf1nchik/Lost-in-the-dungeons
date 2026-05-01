@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6500221035920513556}
   m_Layer: 0
   m_Name: GrayWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -674329127134476731, guid: ce8c970e480ae5249a69854ae42bd27b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
