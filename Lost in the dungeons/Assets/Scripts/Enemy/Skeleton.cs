@@ -12,7 +12,7 @@ public class Skeleton : MonoBehaviour
 
     public float damage = 10f;
 
-    void Start()
+    protected virtual void Start()
     {
         enemyHealthBar.value = EnemyHP;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -23,7 +23,7 @@ public class Skeleton : MonoBehaviour
        // Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (target == null) return;
 
@@ -50,7 +50,7 @@ public class Skeleton : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         EnemyHP -= damage;
         enemyHealthBar.value = EnemyHP;

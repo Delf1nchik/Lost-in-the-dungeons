@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 67683445418294894}
   - component: {fileID: 1540277063905229353}
   - component: {fileID: 3611451736074963867}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -221,6 +221,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player2
   movingSpeed: 6
+  dashSpeed: 35
+  dashDuration: 0.15
+  dashCooldown: 1
+  ghostPrefab: {fileID: 0}
+  ghostDelay: 0.03
   animator: {fileID: 67683445418294894}
 --- !u!95 &67683445418294894
 Animator:

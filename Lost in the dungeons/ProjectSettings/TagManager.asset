@@ -12,11 +12,13 @@ TagManager:
   - RoomPoint
   - Enemy
   - Skeleton
+  - Room
+  - Potion
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground

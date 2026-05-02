@@ -736,6 +736,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f39161a17dd994789c75242b3ebef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraLetterbox
+--- !u!1 &1798776292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 782226159545856371, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+  m_PrefabInstance: {fileID: 4421430943311735515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1798776296 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3436638611155832721, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+  m_PrefabInstance: {fileID: 4421430943311735515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1798776299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798776292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbe02eaf7d8ced4b99ce0783fcb12e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossSkeleton
+  scaleX: 1.3
+  scaleY: 1.3
+  EnemyHP: 100
+  animator: {fileID: 1798776296}
+  enemyHealthBar: {fileID: 2066083763}
+  damage: 10
+  memoryShardPrefab: {fileID: 2993179562712025012, guid: 265cfbcefcb8c644182c328258de7db5, type: 3}
+  minionPrefab: {fileID: 7371230274221331642, guid: b121efb30e8142f48b1b2d86e8120480, type: 3}
+  abilityCooldown: 5
 --- !u!1 &1884812008
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +926,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a038f1ac9ab17747a0e744968b87b94, type: 3}
+--- !u!114 &2066083763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6361043420690665527, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+  m_PrefabInstance: {fileID: 4421430943311735515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &298852335064337623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,10 +1062,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1284620427554443135, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 782226159545856371, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1798776299}
   m_SourcePrefab: {fileID: 100100000, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
