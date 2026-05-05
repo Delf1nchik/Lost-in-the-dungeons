@@ -767,6 +767,21 @@ MonoBehaviour:
   memoryShardPrefab: {fileID: 2993179562712025012, guid: 265cfbcefcb8c644182c328258de7db5, type: 3}
   minionPrefab: {fileID: 7371230274221331642, guid: b121efb30e8142f48b1b2d86e8120480, type: 3}
   abilityCooldown: 5
+--- !u!114 &1798776300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798776292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323e83c95025fbf4e9881df4477cf654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthBar: {fileID: 0}
+  Maxhealth: 100
+  HP: 0
 --- !u!1 &1884812008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,11 +1079,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1284620427554443135, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+    - {fileID: 6826937204877902858, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 782226159545856371, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 1798776300}
+    - targetCorrespondingSourceObject: {fileID: 782226159545856371, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
+      insertIndex: 4
       addedObject: {fileID: 1798776299}
   m_SourcePrefab: {fileID: 100100000, guid: 34e6234c3e0c34745afd010017c7d7c1, type: 3}
 --- !u!1660057539 &9223372036854775807

@@ -103,9 +103,10 @@ public class Player2 : MonoBehaviour
             StartCoroutine(DashRoutine());
         }
 
-        if (canDash && !isDashing)
+        else if (!isDashUnlocked)
         {
-            StartCoroutine(DashRoutine());
+            // Эта строчка поможет тебе понять в консоли, что блокировка работает
+            Debug.Log("Попытка рывка: способность еще не открыта!");
         }
     }
 
