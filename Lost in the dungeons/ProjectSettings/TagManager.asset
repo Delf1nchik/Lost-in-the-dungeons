@@ -12,6 +12,8 @@ TagManager:
   - RoomPoint
   - Enemy
   - Skeleton
+  - Room
+  - Potion
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - DeadBody
   - 
   - 
   - 
