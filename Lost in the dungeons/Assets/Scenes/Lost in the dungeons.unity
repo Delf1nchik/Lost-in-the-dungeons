@@ -1051,6 +1051,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6214202680235625786, guid: fd0dc0081b1ad4e429040b6e74f3949c, type: 3}
   m_PrefabInstance: {fileID: 1603395527}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1226739548 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 67683445418294894, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
+  m_PrefabInstance: {fileID: 8310798292064061504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1289618683 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6866669715973511867, guid: 24350f82f9c709a4ea3c1ec9f26f9ee6, type: 3}
@@ -2720,12 +2725,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1540277063905229353, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1226739548}
+    - target: {fileID: 1540277063905229353, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1289618685}
     - target: {fileID: 1937727704638480064, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 1937727704638480064, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: m_LocalPosition.y

@@ -8,22 +8,26 @@ public class Player2 : MonoBehaviour
 
     private Rigidbody2D rb;
     public Animator animator;
+    private Collider2D playerCollider; // Добавляем ссылку на коллайдер
     private Vector2 direction;
     private bool isInitialized = false;
+
+    public bool isDead = false; // Флаг состояния смерти
 
     private void Awake()
     {
         instance = this;
 
         rb = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject); // Персонаж тоже сохраняется
+        playerCollider = GetComponent<Collider2D>(); // Получаем коллайдер
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
         if (GameInput2.instance == null)
         {
-            Debug.LogError("GameInput2 íå íàéäåí!");
+            Debug.LogError("GameInput2 не найден!");
             enabled = false;
             return;
         }
@@ -34,7 +38,9 @@ public class Player2 : MonoBehaviour
 
     private void Update()
     {
-        // Обработка анимаций (оставляем как было)
+        // Если персонаж мертв, прерываем выполнение Update (не даем сменить анимацию на бег)
+        if (isDead) return;
+
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", direction.x);
@@ -44,6 +50,9 @@ public class Player2 : MonoBehaviour
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
+        // Запрещаем атаковать мертвым
+        if (isDead) return;
+
         if (ActiveGun.Instance != null)
         {
             ActiveGun.Instance.GetActiveGun()?.Attack();
@@ -58,7 +67,9 @@ public class Player2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Защита от null: если GameInput2.instance отсутствует, не пытаемся двигаться
+        // Если мертв — не двигаемся
+        if (isDead) return;
+
         if (!isInitialized || GameInput2.instance == null)
         {
             Debug.LogError("GameInput2.instance is null in FixedUpdate! Movement disabled.");
@@ -66,10 +77,23 @@ public class Player2 : MonoBehaviour
         }
 
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
-        // Если inputVector нулевой, движение не будет применено, но ошибки не будет
         inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
     }
+
+    // Вызывайте этот метод из вашего скрипта здоровья, когда HP падает до 0
+    public void Die()
+    {
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+
+        // Меняем слой, чтобы системы поиска или триггеры врагов его не видели
+        gameObject.layer = LayerMask.NameToLayer("DeadBody");
+
+        if (playerCollider != null) playerCollider.enabled = false;
+        animator.SetTrigger("Die");
+    }
+
     private void OnDestroy()
     {
         if (GameInput2.instance != null)
