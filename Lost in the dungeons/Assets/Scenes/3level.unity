@@ -375,7 +375,7 @@ MonoBehaviour:
   - {fileID: 367744558229855762, guid: 5cd7b24d3986acf489f14bc4b8e20236, type: 3}
   - {fileID: 8045205665011849014, guid: d67f2318e3c40bf48bde0520c2221d06, type: 3}
   - {fileID: 8606724727447384883, guid: d106c52548ab8714f9955cac1b12e293, type: 3}
-  key: {fileID: 0}
+  key: {fileID: 2477783013040187846, guid: 677e857901ac0ae45b378211a5ce164c, type: 3}
   gun: {fileID: 0}
   rooms: []
 --- !u!4 &1894390040
