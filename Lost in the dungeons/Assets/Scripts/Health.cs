@@ -26,7 +26,6 @@ public class Health : MonoBehaviour
 
     void FindHealthBar()
     {
-        // Ищет любой Image на сцене, который висит на объекте с именем HealthBar
         Image[] allImages = Resources.FindObjectsOfTypeAll<Image>();
         foreach (Image img in allImages)
         {
@@ -44,7 +43,6 @@ public class Health : MonoBehaviour
         HP -= damage;
         if (HP < 0) HP = 0;
 
-        // Если вдруг связь потерялась, пробуем найти полоску еще раз прямо в момент урона
         if (healthBar == null) FindHealthBar();
 
         UpdateBar();
