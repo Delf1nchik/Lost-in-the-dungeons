@@ -220,11 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5aad4c0250ee4429abd7f8dada95a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player2
+  isDashUnlocked: 0
   movingSpeed: 6
   dashSpeed: 35
   dashDuration: 0.15
-  dashCooldown: 1
-  ghostPrefab: {fileID: 0}
+  dashCooldown: 3
+  dashTimer: 0
+  dashDamage: 30
+  dashRange: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  ghostPrefab: {fileID: 7689552797014491351, guid: 034795d05ea2c9b48b006fcdea8c301a, type: 3}
   ghostDelay: 0.03
   animator: {fileID: 67683445418294894}
 --- !u!95 &67683445418294894
@@ -239,7 +246,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a232362ca17c94347a7217a40bc324a8, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

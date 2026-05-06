@@ -7,7 +7,7 @@ public class Player2 : MonoBehaviour
     public static Player2 instance { get; private set; }
 
     [Header("Progression")]
-    [SerializeField] private bool isDashUnlocked = false; 
+    [SerializeField] public bool isDashUnlocked = false;
 
     [Header("Movement")]
     [SerializeField] private float movingSpeed = 10f;
@@ -15,12 +15,13 @@ public class Player2 : MonoBehaviour
     [Header("Dash Settings")]
     [SerializeField] private float dashSpeed = 35f;
     [SerializeField] private float dashDuration = 0.15f;
-    [SerializeField] private float dashCooldown = 1f;
+    public float dashCooldown = 1f; // Сделал public для UI
+    public float dashTimer = 0f;    // Текущий таймер отката для UI
 
     [Header("Dash Combat")]
     [SerializeField] private float dashDamage = 30f;
-    [SerializeField] private float dashRange = 1.5f; // Радиус поражения
-    [SerializeField] private LayerMask enemyLayer;   // Слой врагов
+    [SerializeField] private float dashRange = 1.5f;
+    [SerializeField] private LayerMask enemyLayer;
 
     [Header("Ghost Effect")]
     [SerializeField] private GameObject ghostPrefab;
@@ -29,20 +30,28 @@ public class Player2 : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     private Vector2 direction;
-    private Vector2 lastMoveDirection; // Для рывка, если стоим на месте
+    private Vector2 lastMoveDirection;
     private bool isInitialized = false;
 
     private bool canDash = true;
     private bool isDashing = false;
 
-    // Список, чтобы не бить одного и того же врага дважды за один рывок
     private List<Collider2D> hitEnemiesDuringDash = new List<Collider2D>();
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         rb = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject); // Сохранение персонажа между сценами[cite: 3]
     }
 
     private void Start()
@@ -55,7 +64,7 @@ public class Player2 : MonoBehaviour
         }
 
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
-        GameInput2.instance.OnPlayerDash += GameInput_OnPlayerDash; // Подписка на событие рывка[cite: 3]
+        GameInput2.instance.OnPlayerDash += GameInput_OnPlayerDash;
         isInitialized = true;
     }
 
@@ -63,20 +72,25 @@ public class Player2 : MonoBehaviour
     {
         if (isDashing) return;
 
-        // Получаем ввод из GameInput2[cite: 2]
+        // Таймер для UI
+        if (dashTimer > 0)
+        {
+            dashTimer -= Time.deltaTime;
+        }
+
         Vector2 input = GameInput2.instance.GetMovementVector();
 
         if (input != Vector2.zero)
         {
             direction = input;
-            lastMoveDirection = input; // Запоминаем для рывка
+            lastMoveDirection = input;
         }
 
-        // Обновление анимаций[cite: 3]
         animator.SetFloat("Horizontal", input.x);
         animator.SetFloat("Vertical", input.y);
         animator.SetFloat("speed", input.sqrMagnitude);
     }
+
     public void UnlockDash()
     {
         isDashUnlocked = true;
@@ -85,14 +99,15 @@ public class Player2 : MonoBehaviour
 
     public Vector3 GetPlayerScreenPos()
     {
-        return Camera.main.WorldToScreenPoint(transform.position); // Для работы ActiveGun[cite: 3]
+        return Camera.main.WorldToScreenPoint(transform.position);
     }
 
+    // ВОТ ЭТОТ МЕТОД БЫЛ ПОТЕРЯН
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
         if (ActiveGun.Instance != null)
         {
-            ActiveGun.Instance.GetActiveGun()?.Attack(); // Логика атаки из оригинала[cite: 3]
+            ActiveGun.Instance.GetActiveGun()?.Attack();
         }
     }
 
@@ -102,10 +117,8 @@ public class Player2 : MonoBehaviour
         {
             StartCoroutine(DashRoutine());
         }
-
         else if (!isDashUnlocked)
         {
-            // Эта строчка поможет тебе понять в консоли, что блокировка работает
             Debug.Log("Попытка рывка: способность еще не открыта!");
         }
     }
@@ -114,25 +127,24 @@ public class Player2 : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        dashTimer = dashCooldown; // Ставим таймер на максимум
         hitEnemiesDuringDash.Clear();
 
-        // Отключаем столкновения со слоем Enemy на время рывка
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
 
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
         Vector2 dashDir = inputVector.normalized;
 
-        // Если кнопки не нажаты, используем последнее направление движения
         if (dashDir == Vector2.zero) dashDir = lastMoveDirection.normalized;
-        if (dashDir == Vector2.zero) dashDir = Vector2.right; // Запасной вариант
+        if (dashDir == Vector2.zero) dashDir = Vector2.right;
 
         rb.linearVelocity = dashDir * dashSpeed;
 
         float timer = 0;
         while (timer < dashDuration)
         {
-            SpawnGhost(); // Эффект шлейфа[cite: 3]
-            DealDashDamage(); // Нанесение урона
+            SpawnGhost();
+            DealDashDamage();
 
             timer += ghostDelay;
             yield return new WaitForSeconds(ghostDelay);
@@ -140,19 +152,17 @@ public class Player2 : MonoBehaviour
 
         yield return new WaitForSeconds(Mathf.Max(0, dashDuration - timer));
 
-        // Включаем столкновения обратно
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
 
         rb.linearVelocity = Vector2.zero;
         isDashing = false;
 
-        yield return new WaitForSeconds(dashCooldown);
+        yield return new WaitUntil(() => dashTimer <= 0);
         canDash = true;
     }
 
     private void DealDashDamage()
     {
-        // Поиск врагов в радиусе рывка
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, dashRange, enemyLayer);
 
         foreach (Collider2D enemy in enemies)
@@ -189,7 +199,6 @@ public class Player2 : MonoBehaviour
         if (!isInitialized || GameInput2.instance == null || isDashing) return;
 
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
-        // Обычное перемещение через MovePosition[cite: 3]
         rb.MovePosition(rb.position + inputVector.normalized * (movingSpeed * Time.fixedDeltaTime));
     }
 
@@ -202,7 +211,6 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    // Отрисовка радиуса поражения в редакторе (Gizmos)
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -25,9 +25,17 @@ public class Skeleton : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (target == null) return;
+        // Если цели нет, пробуем найти её снова
+        if (target == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+            }
+            return; // Пропускаем кадр, если всё еще не нашли
+        }
 
-        // Поворот спрайта
         HandleFlip();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -68,15 +76,26 @@ public class Skeleton : MonoBehaviour
     }
     public void PlayerDamage()
     {
-        Debug.Log("DAMAGE DEALT");
-
-        if (target == null) return;
-
-        Health playerHealth = target.GetComponent<Health>();
-
-        if (playerHealth != null)
+        // Если по какой-то причине цель потеряна, ищем её по тегу заново
+        if (target == null)
         {
-            playerHealth.TakeDamage(damage);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null) target = player.transform;
+        }
+
+        if (target != null)
+        {
+            // Ищем скрипт Health именно на том объекте, который сейчас в таргете
+            Health playerHealth = target.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+                Debug.Log("Урон нанесен игроку: " + damage);
+            }
+            else
+            {
+                Debug.LogError("Скрипт Health не найден на объекте Player!");
+            }
         }
     }
 }

@@ -2767,18 +2767,6 @@ PrefabInstance:
       propertyPath: hasKey
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: dashDamage
       value: 35
