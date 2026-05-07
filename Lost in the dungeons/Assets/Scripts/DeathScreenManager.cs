@@ -10,6 +10,7 @@ public class DeathScreenManager : MonoBehaviour
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
