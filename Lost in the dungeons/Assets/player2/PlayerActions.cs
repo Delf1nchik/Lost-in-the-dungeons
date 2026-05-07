@@ -109,6 +109,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""7459b3a1-d582-4a92-9770-0a04b1b3283c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -177,6 +186,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0cd1c311-5e84-44a6-8793-e4e0e7107d6e"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -235,6 +255,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_PLayer = asset.FindActionMap("PLayer", throwIfNotFound: true);
         m_PLayer_Move = m_PLayer.FindAction("Move", throwIfNotFound: true);
         m_PLayer_MousePosition = m_PLayer.FindAction("MousePosition", throwIfNotFound: true);
+        m_PLayer_Dash = m_PLayer.FindAction("Dash", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Attack = m_Combat.FindAction("Attack", throwIfNotFound: true);
@@ -322,6 +343,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IPLayerActions> m_PLayerActionsCallbackInterfaces = new List<IPLayerActions>();
     private readonly InputAction m_PLayer_Move;
     private readonly InputAction m_PLayer_MousePosition;
+    private readonly InputAction m_PLayer_Dash;
     /// <summary>
     /// Provides access to input actions defined in input action map "PLayer".
     /// </summary>
@@ -341,6 +363,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PLayer/MousePosition".
         /// </summary>
         public InputAction @MousePosition => m_Wrapper.m_PLayer_MousePosition;
+        /// <summary>
+        /// Provides access to the underlying input action "PLayer/Dash".
+        /// </summary>
+        public InputAction @Dash => m_Wrapper.m_PLayer_Dash;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -373,6 +399,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         /// <summary>
@@ -390,6 +419,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         /// <summary>
@@ -551,6 +583,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMousePosition(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Dash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDash(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Combat" which allows adding and removing callbacks.

@@ -1051,6 +1051,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6214202680235625786, guid: fd0dc0081b1ad4e429040b6e74f3949c, type: 3}
   m_PrefabInstance: {fileID: 1603395527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1160262476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8365946851793669938, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
+  m_PrefabInstance: {fileID: 8310798292064061504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1160262485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160262476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3418d42b0adf7243ac1d45b0b98b75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
+  dashVelocity: 25
+  dashTime: 0.2
+  dashCooldown: 1
 --- !u!224 &1289618683 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6866669715973511867, guid: 24350f82f9c709a4ea3c1ec9f26f9ee6, type: 3}
@@ -2763,42 +2784,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3611451736074963867, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: hasKey
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: dashDamage
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: ghostDelay
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: ghostPrefab
-      value: 
-      objectReference: {fileID: 7689552797014491351, guid: 034795d05ea2c9b48b006fcdea8c301a, type: 3}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: dashCooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 8365946851793669938, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2806,7 +2791,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8365946851793669938, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160262485}
   m_SourcePrefab: {fileID: 100100000, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

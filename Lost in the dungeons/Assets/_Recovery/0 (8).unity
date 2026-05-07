@@ -2763,42 +2763,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3611451736074963867, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: hasKey
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446973644103097198, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: dashDamage
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: ghostDelay
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: ghostPrefab
-      value: 
-      objectReference: {fileID: 7689552797014491351, guid: 034795d05ea2c9b48b006fcdea8c301a, type: 3}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: dashCooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519474579709769028, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 8365946851793669938, guid: 65ac4c1fec571654f958a274ab75dcd8, type: 3}
       propertyPath: m_Name
       value: Player

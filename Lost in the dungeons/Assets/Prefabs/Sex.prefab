@@ -173,8 +173,8 @@ GameObject:
   - component: {fileID: 8950727191667891241}
   - component: {fileID: 3436638611155832721}
   - component: {fileID: 1284620427554443135}
-  - component: {fileID: 6568211617831881752}
   - component: {fileID: 3220200237219823059}
+  - component: {fileID: 6568211617831881752}
   m_Layer: 7
   m_Name: Sex
   m_TagString: Skeleton
@@ -297,6 +297,33 @@ MonoBehaviour:
   animator: {fileID: 3436638611155832721}
   enemyHealthBar: {fileID: 6361043420690665527}
   damage: 80
+--- !u!50 &3220200237219823059
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782226159545856371}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 999
+  m_LinearDamping: 5
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!70 &6568211617831881752
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -334,33 +361,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.08973082, y: -0.39505726}
   m_Size: {x: 1.2143532, y: 2.1795602}
   m_Direction: 0
---- !u!50 &3220200237219823059
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782226159545856371}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 999
-  m_LinearDamping: 5
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &2897151058499058087
 GameObject:
   m_ObjectHideFlags: 0
