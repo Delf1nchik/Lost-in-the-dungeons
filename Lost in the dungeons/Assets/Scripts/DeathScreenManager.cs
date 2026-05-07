@@ -1,33 +1,59 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;                 // <-- ДОБАВЬ ЭТУ СТРОКУ
 
 public class DeathScreenManager : MonoBehaviour
 {
     public static DeathScreenManager Instance { get; private set; }
 
-    [SerializeField] private GameObject deathScreenPanel;
+    [SerializeField] private GameObject deathPanel;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    void Awake()
+    private void Awake()
     {
-        // Превращаем в синглтон и не даём уничтожиться при загрузке новых сцен
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Убедимся, что панель выключена на старте
-        if (deathScreenPanel != null)
-            deathScreenPanel.SetActive(false);
+        // Создаём EventSystem, если его нет (исправлен устаревший метод)
+        if (FindFirstObjectByType<EventSystem>() == null)
+        {
+            var eventSystemObj = new GameObject("EventSystem");
+            eventSystemObj.AddComponent<EventSystem>();
+            eventSystemObj.AddComponent<StandaloneInputModule>();
+            eventSystemObj.transform.SetParent(transform);
+        }
+
+        // Подписываемся на событие загрузки сцены
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void Start()
+    private void OnDestroy()
     {
-        // Восстанавливаем время (на случай, если при перезапуске сцены timeScale остался 0)
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void Start()
+    {
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (deathPanel != null)
+            deathPanel.SetActive(false);
+    }
+
+    // Вызывается каждый раз после загрузки новой сцены
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (deathPanel != null)
+            deathPanel.SetActive(false);
+
         Time.timeScale = 1f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -35,20 +61,28 @@ public class DeathScreenManager : MonoBehaviour
 
     public void ShowDeathScreen()
     {
-        if (deathScreenPanel != null)
+        if (deathPanel != null)
         {
-            deathScreenPanel.SetActive(true);
-            Time.timeScale = 0f;          // ставим игру на паузу
-            Cursor.visible = true;        // показываем курсор для кнопок
+            deathPanel.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+
+            var eventSystem = EventSystem.current;
+            if (eventSystem != null)
+                eventSystem.enabled = true;
+
+            // Фокусируем кнопку (опционально)
+            var restartButton = deathPanel.transform.Find("ButtonRestart")?.GetComponent<Button>();
+            if (restartButton != null)
+                EventSystem.current.SetSelectedGameObject(restartButton.gameObject);
         }
     }
 
-    // Методы для кнопок (остаются без изменений)
     public void RestartLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void GoToMainMenu()

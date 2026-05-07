@@ -49,6 +49,8 @@ public class Health : MonoBehaviour
 
         // Здесь можно добавить дополнительную логику, характерную только для здоровья
         // Например, выключить скрипт здоровья или запустить таймер перезагрузки
+        DeathScreenManager.Instance?.ShowDeathScreen();
+        gameObject.SetActive(false); // отключаем игрока
         Debug.Log("Персонаж погиб.");
     }
 }
