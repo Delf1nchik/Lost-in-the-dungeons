@@ -33,6 +33,10 @@ public class Sword : ActiveGun.Weapon
         {
             skeleton.TakeDamage(_damageAmount);
         }
+        else if (collision.transform.TryGetComponent(out BossController boss))
+        {
+            boss.TakeDamage(_damageAmount);
+        }
     }
 
     public void AttackColliderTurnOff()

@@ -18,5 +18,10 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             skeleton.TakeDamage(damage);
         }
+        else if (collision.transform.TryGetComponent(out BossController boss))
+        {
+            boss.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

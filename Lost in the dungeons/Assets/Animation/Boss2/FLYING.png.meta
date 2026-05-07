@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: ad84e5fed91ee3345b7c5ecc3d795c39
+guid: 7d05d45fee42d0c49a3e255f002370e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -252343562717082310
-    second: ATTACK_0
+      213: 6772775923325811741
+    second: FLYING_0
   - first:
-      213: -210908623516531236
-    second: ATTACK_1
+      213: 5941632107932350943
+    second: FLYING_1
   - first:
-      213: -1884070897103218386
-    second: ATTACK_2
+      213: -2846053855543560624
+    second: FLYING_2
   - first:
-      213: -5421470884539877244
-    second: ATTACK_3
-  - first:
-      213: -637045071952103482
-    second: ATTACK_4
-  - first:
-      213: -8222471432525534737
-    second: ATTACK_5
-  - first:
-      213: -5060464365741366859
-    second: ATTACK_6
-  - first:
-      213: 2732036489171911614
-    second: ATTACK_7
+      213: -6678637041112908962
+    second: FLYING_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,10 +109,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATTACK_0
+      name: FLYING_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
+        y: 5
+        width: 80
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c372d81dbbdfd50800000000000000
+      internalID: 6772775923325811741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLYING_1
+      rect:
+        serializedVersion: 2
+        x: 88
         y: 1
         width: 66
         height: 68
@@ -136,108 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3d44eeddde7f7cf0800000000000000
-      internalID: -252343562717082310
+      spriteID: fd9fc5b0ceae47250800000000000000
+      internalID: 5941632107932350943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK_1
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 1
-        width: 65
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd50b3f69b3b21df0800000000000000
-      internalID: -210908623516531236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK_2
+      name: FLYING_2
       rect:
         serializedVersion: 2
         x: 168
-        y: 2
-        width: 64
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e29d286508f6ad5e0800000000000000
-      internalID: -1884070897103218386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK_3
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 1
-        width: 80
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 488b0e664f013c4b0800000000000000
-      internalID: -5421470884539877244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK_4
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 2
-        width: 66
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c7b16cd1e2c827f0800000000000000
-      internalID: -637045071952103482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK_5
-      rect:
-        serializedVersion: 2
-        x: 411
-        y: 4
+        y: 5
         width: 70
-        height: 64
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe9a480fbc9e3ed80800000000000000
-      internalID: -8222471432525534737
+      spriteID: 056f1b0f819c088d0800000000000000
+      internalID: -2846053855543560624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK_6
+      name: FLYING_3
       rect:
         serializedVersion: 2
-        x: 492
-        y: 3
+        x: 249
+        y: 5
         width: 69
-        height: 64
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b1a679887e95c9b0800000000000000
-      internalID: -5060464365741366859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK_7
-      rect:
-        serializedVersion: 2
-        x: 567
-        y: 2
-        width: 80
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb34f7246b42ae520800000000000000
-      internalID: 2732036489171911614
+      spriteID: e5bf2bcfef6b053a0800000000000000
+      internalID: -6678637041112908962
       vertices: []
       indices: 
       edges: []
@@ -310,14 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ATTACK_0: -252343562717082310
-      ATTACK_1: -210908623516531236
-      ATTACK_2: -1884070897103218386
-      ATTACK_3: -5421470884539877244
-      ATTACK_4: -637045071952103482
-      ATTACK_5: -8222471432525534737
-      ATTACK_6: -5060464365741366859
-      ATTACK_7: 2732036489171911614
+      FLYING_0: 6772775923325811741
+      FLYING_1: 5941632107932350943
+      FLYING_2: -2846053855543560624
+      FLYING_3: -6678637041112908962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
