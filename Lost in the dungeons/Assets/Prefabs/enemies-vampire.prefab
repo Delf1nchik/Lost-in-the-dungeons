@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 774028612839612934}
   - component: {fileID: -438752498472369422}
   - component: {fileID: -6046613062923744618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemies-vampire
-  m_TagString: Untagged
+  m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,8 +157,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.1666666, y: 1.5}
+  m_Offset: {x: 0.032865405, y: 0.032865286}
+  m_Size: {x: 0.80514646, y: 1.1713462}
   m_Direction: 0
 --- !u!114 &-438752498472369422
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   EnemyHP: 100
   animator: {fileID: -6046613062923744618}
   enemyHealthBar: {fileID: 3618630763157853717}
-  damage: 10
+  damage: 20
 --- !u!95 &-6046613062923744618
 Animator:
   serializedVersion: 7

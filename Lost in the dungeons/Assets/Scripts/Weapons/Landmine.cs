@@ -4,7 +4,8 @@ public class Landmine : ActiveGun.Weapon
 {
     public GameObject placedLandminePrefab;
     public int maxLandmines = 3;
-    public int currentLandmines = 0;
+    // static делает переменную общей для всех скриптов и доступной, когда объект выключен
+    public static int currentLandmines = 0;
     private float timer = 0.6f;
 
     public override void Attack()

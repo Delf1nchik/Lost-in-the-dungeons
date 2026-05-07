@@ -8,10 +8,11 @@ public class PlacedLandmine : MonoBehaviour
     {
         if (collision.transform.TryGetComponent(out Skeleton skeleton))
         {
-            Destroy(gameObject);
+            // ѕр€мое обращение к статической переменной класса Landmine
+            Landmine.currentLandmines--;
+
             skeleton.TakeDamage(damage);
-            GameObject landmine = GameObject.Find("Landmine");
-            landmine.GetComponent<Landmine>().currentLandmines--;
+            Destroy(gameObject);
         }
     }
 }

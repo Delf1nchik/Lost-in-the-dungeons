@@ -1230,7 +1230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2412274319617571880, guid: 0092641a98196814cb71758443688430, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6408064430300936553, guid: 0092641a98196814cb71758443688430, type: 3}
       propertyPath: m_Name
@@ -1466,6 +1466,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434672197}
   m_CullTransparentMesh: 1
+--- !u!114 &1463713919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3618630763157853717, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+  m_PrefabInstance: {fileID: 2118703612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!4 &1492773022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1545209927522762448, guid: 0092641a98196814cb71758443688430, type: 3}
@@ -2878,6 +2889,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemies-vampire
       objectReference: {fileID: 0}
+    - target: {fileID: 4401588658225958011, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 17.2005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401588658225958011, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.842
+      objectReference: {fileID: 0}
     - target: {fileID: 6151660851035305884, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2886,11 +2905,43 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -438752498472369422, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2022905955446090273, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120827101}
   m_SourcePrefab: {fileID: 100100000, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+--- !u!1 &2120827094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022905955446090273, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+  m_PrefabInstance: {fileID: 2118703612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2120827095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6046613062923744618, guid: b03bca19176c6a04fb2f975e049c35cd, type: 3}
+  m_PrefabInstance: {fileID: 2118703612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120827101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120827094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8724595c492fa418f771b31d3b8e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Skeleton
+  scaleX: 1.3
+  scaleY: 1.3
+  EnemyHP: 100
+  animator: {fileID: 2120827095}
+  enemyHealthBar: {fileID: 1463713919}
+  damage: 20
 --- !u!1 &2137387180
 GameObject:
   m_ObjectHideFlags: 0
