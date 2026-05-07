@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Player2 : MonoBehaviour
 {
+    private Collider2D playerCollider;
     public static Player2 instance { get; private set; }
 
     [Header("Progression")]
@@ -35,11 +36,15 @@ public class Player2 : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing = false;
+    public bool isDead = false; // Флаг состояния смерти
 
     private List<Collider2D> hitEnemiesDuringDash = new List<Collider2D>();
 
     private void Awake()
     {
+        playerCollider = GetComponent<Collider2D>(); // Получаем коллайдер
+        DontDestroyOnLoad(gameObject);
+
         if (instance == null)
         {
             instance = this;
@@ -73,6 +78,16 @@ public class Player2 : MonoBehaviour
 
     private void Update()
     {
+        // Если персонаж мертв, прерываем выполнение Update (не даем сменить анимацию на бег)
+        if (isDead) return;
+
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
+        animator.SetFloat("speed", direction.sqrMagnitude);
+
         if (isDashing) return;
 
         // Таймер для UI
@@ -205,12 +220,33 @@ public class Player2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Если мертв — не двигаемся
+        if (isDead) return;
+
+        if (!isInitialized || GameInput2.instance == null)
+        {
+            Debug.LogError("GameInput2.instance is null in FixedUpdate! Movement disabled.");
+            return;
+        }
+
         if (!isInitialized || GameInput2.instance == null || isDashing) return;
 
         Vector2 inputVector = GameInput2.instance.GetMovementVector();
         rb.MovePosition(rb.position + inputVector.normalized * (movingSpeed * Time.fixedDeltaTime));
     }
+    public void Die()
+    {
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
 
+        // Меняем слой, чтобы системы поиска или триггеры врагов его не видели
+        gameObject.layer = LayerMask.NameToLayer("DeadBody");
+
+        if (playerCollider != null) playerCollider.enabled = false;
+        animator.SetTrigger("Die");
+
+
+    }
     private void OnDestroy()
     {
         if (GameInput2.instance != null)
