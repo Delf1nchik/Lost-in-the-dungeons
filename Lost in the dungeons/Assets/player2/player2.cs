@@ -28,6 +28,14 @@ public class Player2 : MonoBehaviour
     [SerializeField] private GameObject ghostPrefab;
     [SerializeField] private float ghostDelay = 0.03f;
 
+
+    [Header("UI Icons")]
+    [SerializeField] private GameObject dashIcon;     // Перетащи DashIcon из Canvas сюда
+    [SerializeField] private GameObject hellfireIcon; // Перетащи HellfireIcon из Canvas сюда
+
+    public bool canUseHellfire = false;
+
+
     private Rigidbody2D rb;
     public Animator animator;
     private Vector2 direction;
@@ -42,13 +50,14 @@ public class Player2 : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>(); // Получаем коллайдер
         DontDestroyOnLoad(gameObject);
 
       /*  if (instance == null)
         {
-            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -58,7 +67,12 @@ public class Player2 : MonoBehaviour
         }
       */
     }
-
+    public void UnlockHellfire()
+    {
+        canUseHellfire = true;
+        if (hellfireIcon != null) hellfireIcon.SetActive(true);
+        Debug.Log("Адское пламя доступно!");
+    }
     private void Start()
     {
         if (GameInput2.instance == null)
@@ -111,7 +125,8 @@ public class Player2 : MonoBehaviour
 
     public void UnlockDash()
     {
-        isDashUnlocked = true;
+        isDashUnlocked = true; 
+        if (dashIcon != null) dashIcon.SetActive(true);
         Debug.Log("Воспоминание восстановлено: Рывок разблокирован!");
     }
 

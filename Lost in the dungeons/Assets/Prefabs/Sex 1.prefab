@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 3220200237219823059}
   - component: {fileID: 6568211617831881752}
   m_Layer: 7
-  m_Name: Sex
+  m_Name: Sex 1
   m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2424553518018739129, guid: 046872cb5e4ce4548aacae0010293cbc, type: 3}
+  m_Sprite: {fileID: 815424164945274260, guid: 94c0911da3bfc4140acb378f17c85501, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -245,7 +245,7 @@ Animator:
   m_GameObject: {fileID: 782226159545856371}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90c8aeefe548834439d5430009435bfa, type: 2}
+  m_Controller: {fileID: 9100000, guid: ab84ad2dfcb1b0d43979d6ace1dd5c77, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -354,8 +354,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.08973082, y: -0.39505726}
-  m_Size: {x: 1.2143532, y: 2.1795602}
+  m_Offset: {x: -0.4595874, y: -0.39505723}
+  m_Size: {x: 1.7186999, y: 2.221754}
   m_Direction: 0
 --- !u!1 &2897151058499058087
 GameObject:
@@ -542,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000000022352, y: 0.97}
+  m_AnchoredPosition: {x: -0.5, y: 0.94}
   m_SizeDelta: {x: 46.8469, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6361043420690665527
