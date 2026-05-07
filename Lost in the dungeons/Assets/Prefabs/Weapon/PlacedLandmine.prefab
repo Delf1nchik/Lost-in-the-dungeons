@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73405c731b8063649a4e2d5ba3a76e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlacedLandmine
-  damage: 10
+  damage: 30
 --- !u!61 &543160652421376520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0005211234, y: 0.00052114297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,5 +150,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.14, y: 0.07}
+  m_Size: {x: 0.12645036, y: 0.055060647}
   m_EdgeRadius: 0

@@ -1120,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6223662840780948348, guid: 88de73630369be246947d8235ff45a54, type: 3}
       propertyPath: fireForce
-      value: 7
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6223662840780948348, guid: 88de73630369be246947d8235ff45a54, type: 3}
       propertyPath: firePoint
