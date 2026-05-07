@@ -1,21 +1,11 @@
 using UnityEngine;
-using TMPro; // Не забудьте добавить этот неймспейс
+using TMPro;
 
 public class MemoryShard : MonoBehaviour
 {
+    // Убираем [SerializeField] у notificationObject, так как будем искать его кодом
+    private GameObject notificationObject;
     [SerializeField] private string message = "Вы подобрали осколок и разблокировали рывок!";
-    private TextMeshProUGUI notificationText;
-
-    private void Start()
-    {
-        // Ищем текст в Canvas по тегу или имени
-        GameObject textObj = GameObject.Find("PickupNotification");
-        if (textObj != null)
-        {
-            notificationText = textObj.GetComponent<TextMeshProUGUI>();
-            notificationText.gameObject.SetActive(false); // Скрываем при старте
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,24 +16,44 @@ public class MemoryShard : MonoBehaviour
             {
                 player.UnlockDash();
                 ShowMessage();
-                Destroy(gameObject, 0.1f); // Небольшая задержка, чтобы успел сработать код
+                Destroy(gameObject);
             }
         }
     }
 
     void ShowMessage()
     {
-        if (notificationText != null)
-        {
-            notificationText.text = message;
-            notificationText.gameObject.SetActive(true);
-            // Скрыть сообщение через 3 секунды
-            Invoke("HideMessage", 3f);
-        }
-    }
+        // 1. Ищем Canvas
+        GameObject canvas = GameObject.Find("Canvas");
 
-    void HideMessage()
-    {
-        notificationText.gameObject.SetActive(false);
+        if (canvas != null)
+        {
+            // 2. Ищем PickupNotification внутри Canvas (даже если он выключен)
+            Transform t = canvas.transform.Find("PickupNotification");
+            if (t != null)
+            {
+                notificationObject = t.gameObject;
+            }
+        }
+
+        if (notificationObject != null)
+        {
+            notificationObject.SetActive(true);
+
+            var textComponent = notificationObject.GetComponent<TextMeshProUGUI>();
+            if (textComponent != null)
+            {
+                textComponent.text = message;
+            }
+
+            // Запуск таймера
+            var timer = notificationObject.GetComponent<MessageTimer>();
+            if (timer == null) timer = notificationObject.AddComponent<MessageTimer>();
+            timer.StartTimer(3f);
+        }
+        else
+        {
+            Debug.LogError("ОШИБКА: Не нашел объект PickupNotification внутри Canvas! Проверь имя в Hierarchy.");
+        }
     }
 }
