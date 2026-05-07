@@ -8,6 +8,7 @@ public class GameInput2 : MonoBehaviour
     private PlayerActions _actions;
 
     public event EventHandler OnPlayerAttack;
+    public event EventHandler OnWeaponChange;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class GameInput2 : MonoBehaviour
         _actions.Combat.Enable();
 
         _actions.Combat.Attack.started += Attack_started;
+        _actions.Combat.ChangeWeapon.started += ChangeWeapon_started;
 
         Debug.Log("GameInput2 initialized"); // Для проверки, что объект создан
     }
@@ -33,6 +35,14 @@ public class GameInput2 : MonoBehaviour
     private void Attack_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnPlayerAttack?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void ChangeWeapon_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (OnWeaponChange != null)
+        {
+            OnWeaponChange.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public Vector2 GetMovementVector()

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Sword : MonoBehaviour
+public class Sword : ActiveGun.Weapon
 {
     [SerializeField] private int _damageAmount = 10;
 
@@ -20,7 +20,7 @@ public class Sword : MonoBehaviour
         AttackColliderTurnOffOn();
     }
 
-    public void Attack()
+    public override void Attack()
     {
         AttackColliderTurnOn();
 
