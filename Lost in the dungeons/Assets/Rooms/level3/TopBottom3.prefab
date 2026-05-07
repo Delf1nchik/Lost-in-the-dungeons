@@ -14411,11 +14411,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.24
+      value: 6.334
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14460,6 +14460,14 @@ PrefabInstance:
     - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: cameraChangePos.y
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15845,11 +15853,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.26
+      value: -6.31
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15894,6 +15902,14 @@ PrefabInstance:
     - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: cameraChangePos.y
       value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.y
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

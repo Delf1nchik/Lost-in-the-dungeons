@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Afterboss : MonoBehaviour
 {
-    public string level = "level2";
+    public string level;
 
     private bool playerInside = false;
     private GameObject player;
