@@ -65,6 +65,9 @@ public class Player2 : MonoBehaviour
 
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
         GameInput2.instance.OnPlayerDash += GameInput_OnPlayerDash;
+        GameInput2.instance.OnWeaponChange += GameInput_OnWeaponChange;
+        ActiveGun.Instance.transform.GetChild(1).gameObject.SetActive(false);
+        ActiveGun.Instance.transform.GetChild(2).gameObject.SetActive(false);
         isInitialized = true;
     }
 
@@ -121,6 +124,12 @@ public class Player2 : MonoBehaviour
         {
             Debug.Log("Попытка рывка: способность еще не открыта!");
         }
+    }
+    private void GameInput_OnWeaponChange(object sender, System.EventArgs e)
+    {
+        ActiveGun.Instance.transform.GetChild(ActiveGun.CurrentWeaponIndex).gameObject.SetActive(false);
+        ActiveGun.CurrentWeaponIndex = (ActiveGun.CurrentWeaponIndex + 1) % 3;
+        ActiveGun.Instance.transform.GetChild(ActiveGun.CurrentWeaponIndex).gameObject.SetActive(true);
     }
 
     private IEnumerator DashRoutine()

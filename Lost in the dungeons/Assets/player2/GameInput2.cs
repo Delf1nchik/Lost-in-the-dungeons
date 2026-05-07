@@ -10,6 +10,7 @@ public class GameInput2 : MonoBehaviour
 
     public event EventHandler OnPlayerAttack;
     public event EventHandler OnPlayerDash; // Событие для рывка
+    public event EventHandler OnWeaponChange;
 
     private void Awake()
     {
@@ -29,10 +30,17 @@ public class GameInput2 : MonoBehaviour
         // Подписки на события
         _actions.Combat.Attack.started += Attack_started;
         _actions.PLayer.Dash.performed += Dash_performed; // Dash должен быть создан в Input Actions
+        _actions.Combat.ChangeWeapon.started += ChangeWeapon_started;
 
         Debug.Log("GameInput2 initialized with Dash support");
     }
-
+    private void ChangeWeapon_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (OnWeaponChange != null)
+        {
+            OnWeaponChange.Invoke(this, EventArgs.Empty);
+        }
+    }
     private void Attack_started(InputAction.CallbackContext obj)
     {
         OnPlayerAttack?.Invoke(this, EventArgs.Empty);
