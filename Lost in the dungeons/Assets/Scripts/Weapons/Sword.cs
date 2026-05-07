@@ -6,8 +6,11 @@ public class Sword : ActiveGun.Weapon
 {
     [SerializeField] private int _damageAmount = 10;
 
-    public event EventHandler OnSwordSwing;
+    [Header("Audio")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _swingSound;
 
+    public event EventHandler OnSwordSwing;
     private PolygonCollider2D _polygonCollider2D;
 
     private void Awake()
@@ -23,6 +26,12 @@ public class Sword : ActiveGun.Weapon
     public override void Attack()
     {
         AttackColliderTurnOn();
+
+        // ¬Œ“ «ƒ≈—‹ »√–¿≈Ã «¬”  ¬«Ã¿’¿
+        if (_audioSource != null && _swingSound != null)
+        {
+            _audioSource.PlayOneShot(_swingSound);
+        }
 
         OnSwordSwing?.Invoke(this, EventArgs.Empty);
     }
