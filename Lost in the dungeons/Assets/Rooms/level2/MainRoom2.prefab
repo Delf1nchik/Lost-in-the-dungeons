@@ -3821,11 +3821,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.004
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.265
+      value: -6.309
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3870,6 +3870,14 @@ PrefabInstance:
     - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: cameraChangePos.y
       value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.y
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6813,11 +6821,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.22
+      value: -10.33
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.002
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7966,6 +7974,14 @@ PrefabInstance:
     - target: {fileID: 3238842496330356680, guid: a31bf439c2942ea4fa33a2c4026ad69e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458015711622896135, guid: a31bf439c2942ea4fa33a2c4026ad69e, type: 3}
+      propertyPath: m_Radius
+      value: 0.8114009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458015711622896135, guid: a31bf439c2942ea4fa33a2c4026ad69e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3114009
       objectReference: {fileID: 0}
     - target: {fileID: 9036093447097136073, guid: a31bf439c2942ea4fa33a2c4026ad69e, type: 3}
       propertyPath: m_Name
@@ -15556,6 +15572,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6528800969826355221, guid: 7bdefdaddc079164b81dd2b56eafbb90, type: 3}
+      propertyPath: m_Radius
+      value: 0.7524872
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528800969826355221, guid: 7bdefdaddc079164b81dd2b56eafbb90, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.25248718
+      objectReference: {fileID: 0}
     - target: {fileID: 6827594932932707991, guid: 7bdefdaddc079164b81dd2b56eafbb90, type: 3}
       propertyPath: m_Name
       value: DoorBoss2
@@ -16142,7 +16166,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.17
+      value: 10.309
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16187,6 +16211,10 @@ PrefabInstance:
     - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: cameraChangePos.x
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.x
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18916,11 +18944,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.255
+      value: 6.311
       objectReference: {fileID: 0}
     - target: {fileID: 551227110031602061, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18965,6 +18993,14 @@ PrefabInstance:
     - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
       propertyPath: cameraChangePos.y
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836252327565742650, guid: 4e82f535eb93f0e488144410872e5615, type: 3}
+      propertyPath: playerChangePos.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

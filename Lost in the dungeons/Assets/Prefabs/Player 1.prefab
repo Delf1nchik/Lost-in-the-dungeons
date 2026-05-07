@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b061bcd78c69440aa61039a8257748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActiveGun
+  gun: {fileID: 0}
   sword: {fileID: 8801084250124111601}
+  landmine: {fileID: 0}
 --- !u!1 &8365946851793669938
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +134,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2132673576908207589, guid: 94083dd887ea46a42929d95eff94a7c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,6 +236,7 @@ MonoBehaviour:
   ghostPrefab: {fileID: 7689552797014491351, guid: 034795d05ea2c9b48b006fcdea8c301a, type: 3}
   ghostDelay: 0.03
   animator: {fileID: 67683445418294894}
+  isDead: 0
 --- !u!95 &67683445418294894
 Animator:
   serializedVersion: 7
@@ -284,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   hasKey: 0
+  hasShard: 0
 --- !u!1001 &420911742416991669
 PrefabInstance:
   m_ObjectHideFlags: 0

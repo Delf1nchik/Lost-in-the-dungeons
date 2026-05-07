@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6681212884640152647}
   m_Layer: 0
   m_Name: 505a0b9a-1645-4cc9-afa5-81a3237bd585_removalai_preview_0
-  m_TagString: Untagged
+  m_TagString: shard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159a6eb7288475b44b87b0c6a09faaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MemoryShard
-  notificationObject: {fileID: 8028542180082798961, guid: 5bfc2bd5080901c47b2908b74b82c520, type: 3}
   message: "\u0412\u044B \u043F\u043E\u0434\u043E\u0431\u0440\u0430\u043B\u0438 \u043E\u0441\u043A\u043E\u043B\u043E\u043A
     \u0438 \u0440\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043B\u0438
     \u0440\u044B\u0432\u043E\u043A!"

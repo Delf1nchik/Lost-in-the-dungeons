@@ -11,6 +11,7 @@ public class MemoryShard : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.GetComponent<PlayerInventory>().hasShard = true;
             Player2 player = collision.GetComponent<Player2>();
             if (player != null)
             {
@@ -20,6 +21,7 @@ public class MemoryShard : MonoBehaviour
             }
         }
     }
+  
 
     void ShowMessage()
     {

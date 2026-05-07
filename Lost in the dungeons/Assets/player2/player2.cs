@@ -42,10 +42,11 @@ public class Player2 : MonoBehaviour
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>(); // Получаем коллайдер
         DontDestroyOnLoad(gameObject);
 
-        if (instance == null)
+      /*  if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -55,8 +56,7 @@ public class Player2 : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        rb = GetComponent<Rigidbody2D>();
+      */
     }
 
     private void Start()

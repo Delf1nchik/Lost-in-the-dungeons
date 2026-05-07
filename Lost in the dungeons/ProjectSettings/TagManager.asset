@@ -15,6 +15,7 @@ TagManager:
   - Room
   - Potion
   - HealthBar
+  - shard
   layers:
   - Default
   - TransparentFX

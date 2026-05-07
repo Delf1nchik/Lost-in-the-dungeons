@@ -17,13 +17,7 @@ public class Health : MonoBehaviour
 
     private bool isDead = false;
 
-    private void Awake()
-
-    {
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
-    }
+ 
 
 
     void Start()
@@ -40,7 +34,7 @@ public class Health : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 
     {
-
+        UpdateBar();
         FindHealthBar();
 
     }
@@ -146,11 +140,5 @@ public class Health : MonoBehaviour
     }
 
 
-    private void OnDestroy()
-
-    {
-
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-
-    }
+ 
 }
