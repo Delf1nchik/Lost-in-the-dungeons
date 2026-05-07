@@ -17,11 +17,7 @@ public class Health : MonoBehaviour
 
     private bool isDead = false;
 
-<<<<<<< Updated upstream
  
-=======
-   
->>>>>>> Stashed changes
 
 
     void Start()
@@ -29,7 +25,7 @@ public class Health : MonoBehaviour
     {
 
         HP = Maxhealth;
-        UpdateBar();
+
         FindHealthBar();
 
     }
@@ -144,9 +140,5 @@ public class Health : MonoBehaviour
     }
 
 
-<<<<<<< Updated upstream
  
-=======
-  
->>>>>>> Stashed changes
 }
