@@ -3,11 +3,16 @@ using UnityEngine;
 public class PlacedLandmine : MonoBehaviour
 {
     public int damage = 15;
-
+    public AudioClip explosionSound;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bool hitTarget = false;
+        if (explosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        }
 
+        
         if (collision.transform.TryGetComponent(out Skeleton skeleton))
         {
             skeleton.TakeDamage(damage);
@@ -22,13 +27,9 @@ public class PlacedLandmine : MonoBehaviour
 
         if (hitTarget)
         {
+            Landmine.currentLandmines--;
+
             Destroy(gameObject);
-            // Безопасный поиск объекта Landmine для уменьшения счетчика
-            GameObject landmineObj = GameObject.Find("Landmine");
-            if (landmineObj != null)
-            {
-                landmineObj.GetComponent<Landmine>().currentLandmines--;
-            }
         }
     }
 }

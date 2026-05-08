@@ -235,6 +235,12 @@ MonoBehaviour:
     m_Bits: 128
   ghostPrefab: {fileID: 7689552797014491351, guid: 034795d05ea2c9b48b006fcdea8c301a, type: 3}
   ghostDelay: 0.03
+  isNovaUnlocked: 0
+  novaRadius: 3.5
+  novaDamage: 50
+  novaCooldown: 4
+  novaTimer: 0
+  novaEffectPrefab: {fileID: 857216288409618346, guid: 3ab8839995012df4590a291ef46b59ba, type: 3}
   animator: {fileID: 67683445418294894}
   isDead: 0
 --- !u!95 &67683445418294894

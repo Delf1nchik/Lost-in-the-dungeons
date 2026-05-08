@@ -2,45 +2,60 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+public enum AbilityType { Dash, Nova }
+
 public class AbilityDisplay : MonoBehaviour
 {
-    public Image abilityIcon;    // Сюда кинь саму иконку (AbilityIcon)
-    public Image cooldownImage;  // Сюда кинь CooldownOverlay
+    public AbilityType type; // Выбери тип в инспекторе
+    public Image abilityIcon;
+    public Image cooldownImage;
     public TextMeshProUGUI cooldownText;
 
     void Update()
     {
         if (Player2.instance == null) return;
 
-        // 1. ПРОВЕРКА РАЗБЛОКИРОВКИ
-        // Если способность еще не открыта, выключаем все элементы интерфейса
-        if (!Player2.instance.isDashUnlocked)
+        bool isUnlocked = false;
+        float currentTimer = 0;
+        float maxCooldown = 1;
+
+        // Выбираем данные в зависимости от типа способности
+        if (type == AbilityType.Dash)
         {
-            if (abilityIcon.enabled) abilityIcon.enabled = false;
-            if (cooldownImage.enabled) cooldownImage.enabled = false;
-            if (cooldownText != null) cooldownText.gameObject.SetActive(false);
-            return; // Выходим из метода, дальше код не пойдет
+            isUnlocked = Player2.instance.isDashUnlocked;
+            currentTimer = Player2.instance.dashTimer;
+            maxCooldown = Player2.instance.dashCooldown;
+        }
+        else
+        {
+            isUnlocked = Player2.instance.isNovaUnlocked;
+            currentTimer = Player2.instance.novaTimer;
+            maxCooldown = 4f; // Твой novaCooldown
         }
 
-        // 2. ЕСЛИ ОТКРЫТА — ВКЛЮЧАЕМ ИКОНКУ
-        if (!abilityIcon.enabled) abilityIcon.enabled = true;
-
-        // 3. ЛОГИКА КУЛДАУНА (как в Dota 2)
-        if (Player2.instance.dashTimer > 0)
+        // Логика отображения (остается твоя прежняя)
+        if (!isUnlocked)
         {
-            if (!cooldownImage.enabled) cooldownImage.enabled = true;
+            abilityIcon.enabled = false;
+            cooldownImage.enabled = false;
+            if (cooldownText != null) cooldownText.gameObject.SetActive(false);
+            return;
+        }
 
-            cooldownImage.fillAmount = Player2.instance.dashTimer / Player2.instance.dashCooldown;
-
+        abilityIcon.enabled = true;
+        if (currentTimer > 0)
+        {
+            cooldownImage.enabled = true;
+            cooldownImage.fillAmount = currentTimer / maxCooldown;
             if (cooldownText != null)
             {
                 cooldownText.gameObject.SetActive(true);
-                cooldownText.text = Mathf.CeilToInt(Player2.instance.dashTimer).ToString();
+                cooldownText.text = Mathf.CeilToInt(currentTimer).ToString();
             }
         }
         else
         {
-            if (cooldownImage.enabled) cooldownImage.enabled = false;
+            cooldownImage.enabled = false;
             if (cooldownText != null) cooldownText.gameObject.SetActive(false);
         }
     }

@@ -118,6 +118,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Nova"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffdbb237-cf7f-4a54-b0c6-468a87d78f8d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,6 +206,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6793e6c-3861-4f54-9ce5-e5b540aa873d"",
+                    ""path"": ""<Keyboard>/E"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Nova"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -256,6 +276,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_PLayer_Move = m_PLayer.FindAction("Move", throwIfNotFound: true);
         m_PLayer_MousePosition = m_PLayer.FindAction("MousePosition", throwIfNotFound: true);
         m_PLayer_Dash = m_PLayer.FindAction("Dash", throwIfNotFound: true);
+        m_PLayer_Nova = m_PLayer.FindAction("Nova", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Attack = m_Combat.FindAction("Attack", throwIfNotFound: true);
@@ -344,6 +365,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PLayer_Move;
     private readonly InputAction m_PLayer_MousePosition;
     private readonly InputAction m_PLayer_Dash;
+    private readonly InputAction m_PLayer_Nova;
     /// <summary>
     /// Provides access to input actions defined in input action map "PLayer".
     /// </summary>
@@ -367,6 +389,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PLayer/Dash".
         /// </summary>
         public InputAction @Dash => m_Wrapper.m_PLayer_Dash;
+        /// <summary>
+        /// Provides access to the underlying input action "PLayer/Nova".
+        /// </summary>
+        public InputAction @Nova => m_Wrapper.m_PLayer_Nova;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -402,6 +428,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Nova.started += instance.OnNova;
+            @Nova.performed += instance.OnNova;
+            @Nova.canceled += instance.OnNova;
         }
 
         /// <summary>
@@ -422,6 +451,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Nova.started -= instance.OnNova;
+            @Nova.performed -= instance.OnNova;
+            @Nova.canceled -= instance.OnNova;
         }
 
         /// <summary>
@@ -590,6 +622,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Nova" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNova(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Combat" which allows adding and removing callbacks.

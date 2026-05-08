@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Nova",
+                    "type": "Button",
+                    "id": "ffdbb237-cf7f-4a54-b0c6-468a87d78f8d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -109,6 +118,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6793e6c-3861-4f54-9ce5-e5b540aa873d",
+                    "path": "<Keyboard>/E",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Nova",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

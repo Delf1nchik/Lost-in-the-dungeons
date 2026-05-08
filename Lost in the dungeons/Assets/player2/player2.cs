@@ -28,6 +28,14 @@ public class Player2 : MonoBehaviour
     [SerializeField] private GameObject ghostPrefab;
     [SerializeField] private float ghostDelay = 0.03f;
 
+    [Header("Nova Ability")]
+    public bool isNovaUnlocked = false; // Состояние разблокировки
+    [SerializeField] private float novaRadius = 3.5f;
+    [SerializeField] private float novaDamage = 50f;
+    [SerializeField] private float novaCooldown = 4f;
+    public float novaTimer = 0f; // Для отображения в UI
+    [SerializeField] private GameObject novaEffectPrefab; // Пресет визуального эффекта 
+
     private Rigidbody2D rb;
     public Animator animator;
     private Vector2 direction;
@@ -71,6 +79,7 @@ public class Player2 : MonoBehaviour
 
         GameInput2.instance.OnPlayerAttack += GameInput_OnPlayerAttack;
         GameInput2.instance.OnPlayerDash += GameInput_OnPlayerDash;
+        GameInput2.instance.OnPlayerNova += GameInput_OnPlayerNova;
         GameInput2.instance.OnWeaponChange += GameInput_OnWeaponChange;
         ActiveGun.Instance.transform.GetChild(1).gameObject.SetActive(false);
         ActiveGun.Instance.transform.GetChild(2).gameObject.SetActive(false);
@@ -96,7 +105,10 @@ public class Player2 : MonoBehaviour
         {
             dashTimer -= Time.deltaTime;
         }
-
+        if (novaTimer > 0)
+        {
+            novaTimer -= Time.deltaTime;
+        }
         Vector2 input = GameInput2.instance.GetMovementVector();
 
         if (input != Vector2.zero)
@@ -140,6 +152,44 @@ public class Player2 : MonoBehaviour
         {
             Debug.Log("Попытка рывка: способность еще не открыта!");
         }
+    }
+    private void GameInput_OnPlayerNova(object sender, System.EventArgs e)
+    {
+        if (isNovaUnlocked && novaTimer <= 0 && !isDashing && !isDead)
+        {
+            ExecuteNova();
+        }
+    }
+
+    private void ExecuteNova()
+    {
+        novaTimer = novaCooldown;
+
+        // Визуальный эффект в позиции игрока
+        if (novaEffectPrefab != null)
+        {
+            Instantiate(novaEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        // Поиск врагов (используем твой слой enemyLayer)
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, novaRadius, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            // Используем твой класс Skeleton из примера с рывком
+            Skeleton skeleton = enemy.GetComponent<Skeleton>();
+            if (skeleton != null)
+            {
+                skeleton.TakeDamage((int)novaDamage);
+                Debug.Log("Вспышка нанесла урон: " + enemy.name);
+            }
+        }
+    }
+
+    public void UnlockNova()
+    {
+        isNovaUnlocked = true;
+        Debug.Log("Сила артефакта поглощена: Вспышка разблокирована!");
     }
     private void GameInput_OnWeaponChange(object sender, System.EventArgs e)
     {

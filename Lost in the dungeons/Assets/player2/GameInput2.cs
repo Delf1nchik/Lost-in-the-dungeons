@@ -11,7 +11,7 @@ public class GameInput2 : MonoBehaviour
     public event EventHandler OnPlayerAttack;
     public event EventHandler OnPlayerDash; // Событие для рывка
     public event EventHandler OnWeaponChange;
-
+    public event EventHandler OnPlayerNova;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -31,7 +31,7 @@ public class GameInput2 : MonoBehaviour
         _actions.Combat.Attack.started += Attack_started;
         _actions.PLayer.Dash.performed += Dash_performed; // Dash должен быть создан в Input Actions
         _actions.Combat.ChangeWeapon.started += ChangeWeapon_started;
-
+        _actions.PLayer.Nova.performed += Nova_performed;
         Debug.Log("GameInput2 initialized with Dash support");
     }
     private void ChangeWeapon_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -40,6 +40,10 @@ public class GameInput2 : MonoBehaviour
         {
             OnWeaponChange.Invoke(this, EventArgs.Empty);
         }
+    }
+    private void Nova_performed(InputAction.CallbackContext obj)
+    {
+        OnPlayerNova?.Invoke(this, EventArgs.Empty);
     }
     private void Attack_started(InputAction.CallbackContext obj)
     {
@@ -76,7 +80,7 @@ public class GameInput2 : MonoBehaviour
         {
             _actions.Combat.Attack.started -= Attack_started;
             _actions.PLayer.Dash.performed -= Dash_performed;
-
+            _actions.PLayer.Nova.performed -= Nova_performed;
             _actions.Dispose();
             _actions = null;
         }
