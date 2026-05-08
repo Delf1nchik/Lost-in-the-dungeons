@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7940176066002907978}
   - component: {fileID: 8696210360988560470}
   - component: {fileID: 6196257868189601125}
-  - component: {fileID: 6826937204877902858}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -103,28 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!95 &6826937204877902858
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79624927369148420}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90c8aeefe548834439d5430009435bfa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &741923439916487274
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +149,8 @@ GameObject:
   - component: {fileID: 7502574715967034078}
   - component: {fileID: 8950727191667891241}
   - component: {fileID: 3436638611155832721}
-  - component: {fileID: 1284620427554443135}
+  - component: {fileID: 8424888840891125168}
+  - component: {fileID: 4467632618459442018}
   - component: {fileID: 3220200237219823059}
   - component: {fileID: 6568211617831881752}
   m_Layer: 7
@@ -192,7 +170,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.44832, y: 1.7327, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_LocalScale: {x: 1.4255259, y: 1.242983, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4043539709583841284}
@@ -279,7 +257,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1284620427554443135
+--- !u!114 &8424888840891125168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,15 +266,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 782226159545856371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8724595c492fa418f771b31d3b8e0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 323e83c95025fbf4e9881df4477cf654, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Skeleton
-  scaleX: 1.8
-  scaleY: 1.8
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthBar: {fileID: 0}
+  Maxhealth: 100
+  HP: 0
+--- !u!114 &4467632618459442018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782226159545856371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbe02eaf7d8ced4b99ce0783fcb12e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossSkeleton
+  scaleX: 1.3
+  scaleY: 1.3
   EnemyHP: 500
   animator: {fileID: 3436638611155832721}
   enemyHealthBar: {fileID: 6361043420690665527}
-  damage: 80
+  damage: 10
+  memoryShardPrefab: {fileID: 6706060142412156716, guid: ae9ac7eb364aac148aad5e25243c02eb, type: 3}
+  minionPrefab: {fileID: 7371230274221331642, guid: b121efb30e8142f48b1b2d86e8120480, type: 3}
+  abilityCooldown: 5
 --- !u!50 &3220200237219823059
 Rigidbody2D:
   serializedVersion: 5

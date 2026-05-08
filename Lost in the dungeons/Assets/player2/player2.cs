@@ -28,6 +28,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private GameObject ghostPrefab;
     [SerializeField] private float ghostDelay = 0.03f;
 
+<<<<<<< HEAD
     [Header("Nova Ability")]
     public bool isNovaUnlocked = false; // Состояние разблокировки
     [SerializeField] private float novaRadius = 3.5f;
@@ -35,6 +36,15 @@ public class Player2 : MonoBehaviour
     [SerializeField] private float novaCooldown = 4f;
     public float novaTimer = 0f; // Для отображения в UI
     [SerializeField] private GameObject novaEffectPrefab; // Пресет визуального эффекта 
+=======
+
+    [Header("UI Icons")]
+    [SerializeField] private GameObject dashIcon;     // Перетащи DashIcon из Canvas сюда
+    [SerializeField] private GameObject hellfireIcon; // Перетащи HellfireIcon из Canvas сюда
+
+    public bool canUseHellfire = false;
+
+>>>>>>> Boss
 
     private Rigidbody2D rb;
     public Animator animator;
@@ -67,7 +77,12 @@ public class Player2 : MonoBehaviour
         }
       */
     }
-
+    public void UnlockHellfire()
+    {
+        canUseHellfire = true;
+        if (hellfireIcon != null) hellfireIcon.SetActive(true);
+        Debug.Log("Адское пламя доступно!");
+    }
     private void Start()
     {
         if (GameInput2.instance == null)
@@ -124,7 +139,8 @@ public class Player2 : MonoBehaviour
 
     public void UnlockDash()
     {
-        isDashUnlocked = true;
+        isDashUnlocked = true; 
+        if (dashIcon != null) dashIcon.SetActive(true);
         Debug.Log("Воспоминание восстановлено: Рывок разблокирован!");
     }
 
