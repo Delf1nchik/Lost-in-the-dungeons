@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Skeleton
   scaleX: 1.5
   scaleY: 1.5
-  EnemyHP: 100
+  EnemyHP: 110
   animator: {fileID: 9182210092966035269}
   enemyHealthBar: {fileID: 2213828278890201246}
   damage: 10

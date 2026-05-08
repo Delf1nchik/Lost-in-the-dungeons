@@ -22,7 +22,7 @@ public class RoomVariants : MonoBehaviour
         AddRoom lastRoom = rooms[rooms.Count - 1].GetComponent<AddRoom>();
         int rand=Random.Range(0,rooms.Count-2);
         Instantiate(key,rooms[rand].transform.position,Quaternion.identity);
-        Instantiate(gun, rooms[rooms.Count-2].transform.position, Quaternion.identity);
+        //Instantiate(gun, rooms[rooms.Count-2].transform.position, Quaternion.identity);
         //lastRoom.door.SetActive(true);
         //lastRoom.DestroyWalls();
     }

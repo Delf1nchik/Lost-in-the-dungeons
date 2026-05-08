@@ -2,12 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Sword : MonoBehaviour
+public class Sword : ActiveGun.Weapon
 {
     [SerializeField] private int _damageAmount = 10;
 
-    public event EventHandler OnSwordSwing;
+    [Header("Audio")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _swingSound;
 
+    public event EventHandler OnSwordSwing;
     private PolygonCollider2D _polygonCollider2D;
 
     private void Awake()
@@ -20,9 +23,15 @@ public class Sword : MonoBehaviour
         AttackColliderTurnOffOn();
     }
 
-    public void Attack()
+    public override void Attack()
     {
         AttackColliderTurnOn();
+
+        // ¬Œ“ «ƒ≈—‹ »√–¿≈Ã «¬”  ¬«Ã¿’¿
+        if (_audioSource != null && _swingSound != null)
+        {
+            _audioSource.PlayOneShot(_swingSound);
+        }
 
         OnSwordSwing?.Invoke(this, EventArgs.Empty);
     }
@@ -32,6 +41,10 @@ public class Sword : MonoBehaviour
         if (collision.transform.TryGetComponent(out Skeleton skeleton))
         {
             skeleton.TakeDamage(_damageAmount);
+        }
+        else if (collision.transform.TryGetComponent(out BossController boss))
+        {
+            boss.TakeDamage(_damageAmount);
         }
     }
 

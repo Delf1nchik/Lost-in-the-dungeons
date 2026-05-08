@@ -12,11 +12,15 @@ TagManager:
   - RoomPoint
   - Enemy
   - Skeleton
+  - Room
+  - Potion
+  - HealthBar
+  - shard
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
