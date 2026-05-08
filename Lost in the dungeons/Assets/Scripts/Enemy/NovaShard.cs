@@ -8,6 +8,7 @@ public class NovaShard : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.GetComponent<PlayerInventory>().hasShard2 = true;
             Player2 player = collision.GetComponent<Player2>();
             if (player != null)
             {

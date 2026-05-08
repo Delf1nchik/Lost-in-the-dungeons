@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73405c731b8063649a4e2d5ba3a76e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlacedLandmine
-  damage: 30
+  damage: 50
   explosionSound: {fileID: 8300000, guid: 0998b793ebfbece4c81d3f7bd107f21f, type: 3}
 --- !u!61 &543160652421376520
 BoxCollider2D:

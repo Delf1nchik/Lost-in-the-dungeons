@@ -45,7 +45,7 @@ public class Player2 : MonoBehaviour
     private bool canDash = true;
     private bool isDashing = false;
     public bool isDead = false; // Флаг состояния смерти
-
+    public bool hasLastShard = false;
     private List<Collider2D> hitEnemiesDuringDash = new List<Collider2D>();
 
     private void Awake()
@@ -67,7 +67,16 @@ public class Player2 : MonoBehaviour
         }
       */
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Проверяем, что подобрали именно LASTSHARD
+        if (other.gameObject.name == "LASTSHARD" || other.CompareTag("shard"))
+        {
+            hasLastShard = true;
+            Destroy(other.gameObject); // Убираем осколок с земли
+            Debug.Log("Последний осколок подобран! Можно выходить.");
+        }
+    }
     private void Start()
     {
         if (GameInput2.instance == null)

@@ -243,6 +243,7 @@ MonoBehaviour:
   novaEffectPrefab: {fileID: 857216288409618346, guid: 3ab8839995012df4590a291ef46b59ba, type: 3}
   animator: {fileID: 67683445418294894}
   isDead: 0
+  hasLastShard: 0
 --- !u!95 &67683445418294894
 Animator:
   serializedVersion: 7
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   healthBar: {fileID: 8346481814230509950, guid: 24350f82f9c709a4ea3c1ec9f26f9ee6, type: 3}
-  Maxhealth: 100
+  Maxhealth: 200
   HP: 0
 --- !u!114 &3611451736074963867
 MonoBehaviour:
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   hasKey: 0
   hasShard: 0
+  hasLastShard: 0
 --- !u!1001 &420911742416991669
 PrefabInstance:
   m_ObjectHideFlags: 0

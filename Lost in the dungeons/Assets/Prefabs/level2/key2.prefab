@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4966559737470950994}
   - component: {fileID: -8802759499407042798}
   - component: {fileID: 8228038457082260666}
+  - component: {fileID: 736539063957150618}
   m_Layer: 0
   m_Name: key2
   m_TagString: Untagged
@@ -141,3 +142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5029d4badcb7b42a2bbc996d26d043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Key
+--- !u!114 &736539063957150618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704427004838045883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d257fc3ef5ece748bcf09d440cd5d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

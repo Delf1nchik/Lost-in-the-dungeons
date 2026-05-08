@@ -310,10 +310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Skeleton
   scaleX: 1.5
   scaleY: 1.5
-  EnemyHP: 100
+  EnemyHP: 80
   animator: {fileID: 1183732969368752444}
   enemyHealthBar: {fileID: 9002462564859130677}
-  damage: 10
+  damage: 15
 --- !u!95 &1183732969368752444
 Animator:
   serializedVersion: 7

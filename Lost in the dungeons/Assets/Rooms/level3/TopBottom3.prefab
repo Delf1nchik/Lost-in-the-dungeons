@@ -266,7 +266,9 @@ MonoBehaviour:
   - {fileID: 4727678820021430771}
   wallEffect: {fileID: 0}
   door: {fileID: 0}
-  enemyTypes: []
+  enemyTypes:
+  - {fileID: 4268148755631526588, guid: ec8c5f59a0acf5941b7a38948a936de0, type: 3}
+  - {fileID: 4798772416298049102, guid: 2177f90ddc950e8478f8ad34c5ef8c18, type: 3}
   enemySpawners:
   - {fileID: 4465090331334719166}
   - {fileID: 1558219566376705325}

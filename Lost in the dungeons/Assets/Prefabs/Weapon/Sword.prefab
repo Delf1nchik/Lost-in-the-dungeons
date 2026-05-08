@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61199a2381f312f4b912d07a855becb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sword
-  _damageAmount: 10
+  _damageAmount: 20
   _audioSource: {fileID: 7185677843147743086}
   _swingSound: {fileID: 8300000, guid: 35bd6234e52b9e943b6caaf22de3b667, type: 3}
 --- !u!60 &2759457395245670876
