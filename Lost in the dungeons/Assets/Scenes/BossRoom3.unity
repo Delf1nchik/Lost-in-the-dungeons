@@ -119,7 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &21784559
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,15 +257,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 21784559}
   m_CullTransparentMesh: 1
 --- !u!1001 &208567615
-=======
---- !u!1001 &1167382752
->>>>>>> Boss
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-<<<<<<< HEAD
     m_TransformParent: {fileID: 555982101}
     m_Modifications:
     - target: {fileID: 6866669715973511867, guid: 24350f82f9c709a4ea3c1ec9f26f9ee6, type: 3}
@@ -353,67 +348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
-=======
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 782226159545856371, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_Name
-      value: Sex 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6109614893619245730, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6109614893619245730, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502574715967034078, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
->>>>>>> Boss
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 24350f82f9c709a4ea3c1ec9f26f9ee6, type: 3}
 --- !u!224 &208567616 stripped
 RectTransform:
@@ -1388,9 +1326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195166189}
   m_CullTransparentMesh: 1
-=======
-  m_SourcePrefab: {fileID: 100100000, guid: 75951d90aca810b42ad1cda5ed8a395e, type: 3}
->>>>>>> Boss
 --- !u!1 &1221814980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,11 +2509,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1221814983}
   - {fileID: 4294212251576725446}
-<<<<<<< HEAD
   - {fileID: 1949151575}
   - {fileID: 1346805620}
   - {fileID: 1121536156}
   - {fileID: 1589433685}
-=======
-  - {fileID: 1167382752}
->>>>>>> Boss
