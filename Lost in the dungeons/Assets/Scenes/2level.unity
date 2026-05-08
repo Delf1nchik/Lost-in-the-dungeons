@@ -1813,9 +1813,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2213868455475427819, guid: 59301a0d8e2f74542abada5cce466ed3, type: 3}
+      propertyPath: bossSceneName
+      value: BossRoom2
+      objectReference: {fileID: 0}
     - target: {fileID: 3147455771303097359, guid: 59301a0d8e2f74542abada5cce466ed3, type: 3}
       propertyPath: m_Name
       value: MainRoom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239096404753365387, guid: 59301a0d8e2f74542abada5cce466ed3, type: 3}
+      propertyPath: bossSceneName
+      value: BossRoom2
       objectReference: {fileID: 0}
     - target: {fileID: 8730364051616438260, guid: 59301a0d8e2f74542abada5cce466ed3, type: 3}
       propertyPath: m_LocalPosition.x
